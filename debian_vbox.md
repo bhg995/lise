@@ -41,10 +41,39 @@ Jatketaan seuraavilla asetuksilla:
 
 ![3](https://github.com/user-attachments/assets/3516341d-9794-4331-97f1-861862370d08)
 
-  
+![4](https://github.com/user-attachments/assets/94697404-2f87-4b88-a23c-ff510a9a6dae)
+
+Debian OS nyt näkyy listalla.
+
+![5](https://github.com/user-attachments/assets/10da0c21-4389-49a8-8abc-49c02bf44067)
+
+
+## Käynnistys 
+
+Käynnistetään virtuaalinen käyttöjärjestelmä 23.8.2024 klo 14:40 
 
 
 
-## BalenaEtcher
+![6](https://github.com/user-attachments/assets/9aaac595-a58b-4731-b6d2-bad23fc31787)
 
-Käytetään BalenaEtcher ohjelmaa joka kirjoittaa .iso kuvan virtu
+valitsen Live system (amd64)
+
+## Virhe
+
+Ensin ilmestyy *ERROR* Failed to send host log message
+
+![7](https://github.com/user-attachments/assets/2f24c8ec-4b0b-4e12-8517-ba7e07e3aa42)
+
+sitten
+
+![8](https://github.com/user-attachments/assets/bb40e462-5d6b-482e-ad46-e2fcd46c6d11)
+
+Odotan hetken, tietokone saattaa suorittaa taustalla jotain.
+
+Näyttö on tummana hetken aikaa. n. 2 min. 
+
+Hetken odottelun jälkeen Debian live käynnistyy, virallinen Debian on asennettavissa
+
+![9](https://github.com/user-attachments/assets/0e2db746-1efd-4a31-98d5-17c8f32caa97) 
+
+
