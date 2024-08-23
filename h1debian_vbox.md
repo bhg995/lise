@@ -119,10 +119,10 @@ Teen kaiken samalla tavalla uudelleen, paitsi tällä kertaa klikkaan "älä kys
 
 
 ## Lähteet
-- https://terokarvinen.com/linux-palvelimet/
-- https://terokarvinen.com/2023/create-a-web-page-using-github/
-- https://terokarvinen.com/2021/install-debian-on-virtualbox/
-- https://www.quora.com/How-do-I-reset-a-forgotten-password-on-Debian
-- https://askubuntu.com/questions/1335269/host-is-down-text-showing-when-entering-command-reboot
-- https://unix.stackexchange.com/questions/94466/didnt-have-to-specify-a-login-name-during-installation-now-it-asks-me-for-one
-- https://learn.microsoft.com/en-us/answers/questions/920172/bash-wsl-command-not-found
+- https://terokarvinen.com/linux-palvelimet/. Luettu 21.8.2024
+- https://terokarvinen.com/2023/create-a-web-page-using-github/. Luettu 21.8.2024
+- https://terokarvinen.com/2021/install-debian-on-virtualbox/. Luettu 21.8.2024
+- https://www.quora.com/How-do-I-reset-a-forgotten-password-on-Debian. Luettu 23.8.2024
+- https://askubuntu.com/questions/1335269/host-is-down-text-showing-when-entering-command-reboot. Luettu 23.8.2024
+- https://unix.stackexchange.com/questions/94466/didnt-have-to-specify-a-login-name-during-installation-now-it-asks-me-for-one. Luettu 23.8.2024
+- https://learn.microsoft.com/en-us/answers/questions/920172/bash-wsl-command-not-found. Luettu 23.8.2024
