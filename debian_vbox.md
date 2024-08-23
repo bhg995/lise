@@ -90,10 +90,28 @@ Sitten valitsen kieleksi Amerikan englannin.
 Sijaintitieto kelloa varten valitsen Helsinki.
 Näppäimistökieleksi Suomi, ja asettelu Macintosh
 Osionti kohdassa tyhjennän levyn asennusta varten, ja salaan koneen salasanalla.
-Käyttäjät, täytän tiedot oma nimi, kirjautumisnimi sekä tietokoneen nimi, mutta jätän salasanan pois tällä kertaa.
+Käyttäjät, täytän tiedot oma nimi (uhse), kirjautumisnimi sekä tietokoneen nimi, mutta jätän salasanan pois tällä kertaa.
 Yhteenvedosta tarkistan asetukset ja tiedot ovat oikein.
 
-Asennus alkaa 15:20
+Asennus alkaa Host-koneen mukaan 15:20 ja on valmis 15:36
 
 ![11](https://github.com/user-attachments/assets/84cf90ff-b85a-4ee3-a246-05ce2b0a8d73)
 
+## Ensimmäinen ongelma
+
+Asennuksen jälkeen järjestelmä pyytää kirjautumaan sisään user käyttäjään salasanalla, vaikka nimesin tietokoneen "uhse" ja jätin käyttäjäsalasanan käyttämättä.
+
+Nopean internet haun jälkeen käy ilmi että Debian ei käytä oletussalasanaa kuten Kali tai Raspberry.
+
+## Uudelleenkäynnistys
+
+Sammutan Debian virtuaaliympäristön valikosta painamalla "Shutdown" ja käynnistän uudelleen
+
+Ongelma jatkuu joten etsitään lisää tietoa. Ensimmäiseksi yritän resetoida salasanan, ohjeet löytyivät. 
+https://www.quora.com/How-do-I-reset-a-forgotten-password-on-Debian . 
+kohta 10. Reboot your system: "reboot". ei toimi ja järjestelmä antaa virheviestin "System has not been booted with systemd as init system (PID 1). Can't operate. Failed to connect to bus: Host is down"
+
+Lisää hakuja, ja löydetään  Sascha John Hesse joka kirjoitti Jul 9, 2022, 9:06 PM allaolevaan sivuun kommentin josta löydän komennon CTRL+R (macissa cmd+R)
+https://learn.microsoft.com/en-us/answers/questions/920172/bash-wsl-command-not-found 
+
+Järjestelmä käynnistyy uudelleen, mutta ongelma jatkuu vieläkin pyytää salasanaa.
