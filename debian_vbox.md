@@ -15,7 +15,8 @@ b) Tee ja raportoi jokin yksinkertainen toimenpide haluamallasi Linux-ohjelmalla
 
 ## Debian OS
 
-Seuraavat tiedostot ladattu 22.8 klo 19:45 sivulta: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/
+Seuraavat tiedostot ladattu 22.8 klo 19:45 sivulta: 
+https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/
 - debian-live-12.6.0-amd64-xfce.iso.packages
 - debian-live-12.6.0-amd64-xfce.iso.contents
 - debian-live-12.6.0-amd64-xfce.iso
@@ -50,12 +51,11 @@ Debian OS nyt näkyy listalla.
 
 ## Käynnistys 
 
-Käynnistetään virtuaalinen käyttöjärjestelmä 23.8.2024 klo 14:40 
+Käynnistetään virtuaalinen käyttöjärjestelmä 23.8.2024 klo 14:40, valitsemalla Live system (amd64)
 
 
 ![6](https://github.com/user-attachments/assets/9aaac595-a58b-4731-b6d2-bad23fc31787)
 
-valitsen Live system (amd64)
 
 ## Virhe
 
@@ -78,9 +78,7 @@ Hetken odottelun jälkeen Debian live käynnistyy, ja Debian on asennettavissa
 
 Asennetaan Debian täysversio VirtualBoxissa
 
-Ensiksi tulee varoitus
-
-"Untrusted application launcher"
+Ensiksi tulee varoitus "Untrusted application launcher"
 
 ![10](https://github.com/user-attachments/assets/e4b40c92-2fc7-4542-bd6b-5912a6a86b41)
 
@@ -90,7 +88,7 @@ Sitten valitsen kieleksi Amerikan englannin.
 Sijaintitieto kelloa varten valitsen Helsinki.
 Näppäimistökieleksi Suomi, ja asettelu Macintosh
 Osionti kohdassa tyhjennän levyn asennusta varten, ja salaan koneen salasanalla.
-Käyttäjät, täytän tiedot oma nimi (uhse), kirjautumisnimi sekä tietokoneen nimi, mutta jätän salasanan pois tällä kertaa.
+Käyttäjät, täytän tiedot oma nimi (uhse), ja nimeän samalla tavalla myös kirjautumisnimen sekä tietokoneen nimen, mutta jätän salasanan pois tällä kertaa.
 Yhteenvedosta tarkistan asetukset ja tiedot ovat oikein.
 
 Asennus alkaa Host-koneen mukaan 15:20 ja on valmis 15:36
@@ -99,7 +97,7 @@ Asennus alkaa Host-koneen mukaan 15:20 ja on valmis 15:36
 
 ## Ensimmäinen ongelma
 
-Asennuksen jälkeen järjestelmä pyytää kirjautumaan sisään user käyttäjään salasanalla, vaikka nimesin tietokoneen "uhse" ja jätin käyttäjäsalasanan käyttämättä.
+Asennuksen jälkeen järjestelmä pyytää kirjautumaan sisään user käyttäjään salasanalla, vaikka nimesin tietokoneen "uhse" ja jätin käyttäjäsalasanan pois.
 
 Nopean internet haun jälkeen käy ilmi että Debian ei käytä oletussalasanaa kuten Kali tai Raspberry.
 
@@ -108,10 +106,23 @@ Nopean internet haun jälkeen käy ilmi että Debian ei käytä oletussalasanaa 
 Sammutan Debian virtuaaliympäristön valikosta painamalla "Shutdown" ja käynnistän uudelleen
 
 Ongelma jatkuu joten etsitään lisää tietoa. Ensimmäiseksi yritän resetoida salasanan, ohjeet löytyivät. 
-https://www.quora.com/How-do-I-reset-a-forgotten-password-on-Debian . 
+https://www.quora.com/How-do-I-reset-a-forgotten-password-on-Debian. 
 kohta 10. Reboot your system: "reboot". ei toimi ja järjestelmä antaa virheviestin "System has not been booted with systemd as init system (PID 1). Can't operate. Failed to connect to bus: Host is down"
 
-Lisää hakuja, ja löydetään  Sascha John Hesse joka kirjoitti Jul 9, 2022, 9:06 PM allaolevaan sivuun kommentin josta löydän komennon CTRL+R (macissa cmd+R)
+Lisää hakuja, ja löydetään  Sascha John Hesse joka kirjoitti Jul 9, 2022, 9:06 PM allaolevaan sivuun kommentin josta löydän komennon CTRL+R (macissa cmd+R). 
 https://learn.microsoft.com/en-us/answers/questions/920172/bash-wsl-command-not-found 
 
 Järjestelmä käynnistyy uudelleen, mutta ongelma jatkuu vieläkin pyytää salasanaa.
+
+Poistan Debianin VirtualBoxista ja asennan uudelleen.
+Teen kaiken samalla tavalla uudelleen, paitsi tällä kertaa klikkaan "älä kysy salasanaa kirjautuessa" vaihtoehtoa, jota en huomannut aikaisemmalla kerralla. Lopputulos on sama, en pääse kirjautumaan koska salasana on väärä.
+
+
+## Lähteet
+- https://terokarvinen.com/linux-palvelimet/
+- https://terokarvinen.com/2023/create-a-web-page-using-github/
+- https://terokarvinen.com/2021/install-debian-on-virtualbox/
+- https://www.quora.com/How-do-I-reset-a-forgotten-password-on-Debian
+- https://askubuntu.com/questions/1335269/host-is-down-text-showing-when-entering-command-reboot
+- https://unix.stackexchange.com/questions/94466/didnt-have-to-specify-a-login-name-during-installation-now-it-asks-me-for-one
+- https://learn.microsoft.com/en-us/answers/questions/920172/bash-wsl-command-not-found
