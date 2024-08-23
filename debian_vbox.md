@@ -24,7 +24,7 @@ Seuraavat tiedostot ladattu 22.8 klo 19:45 sivulta: https://cdimage.debian.org/d
 
 ![Näyttökuva 2024-8-23 kello 14 16 17](https://github.com/user-attachments/assets/ab2c11b1-f5e3-4570-9b03-886d1969b00a)
 
-## Asennus
+## Asennus VirtualBoxiin
 
 Valitsen Expert mode alhaalta
 
@@ -53,7 +53,6 @@ Debian OS nyt näkyy listalla.
 Käynnistetään virtuaalinen käyttöjärjestelmä 23.8.2024 klo 14:40 
 
 
-
 ![6](https://github.com/user-attachments/assets/9aaac595-a58b-4731-b6d2-bad23fc31787)
 
 valitsen Live system (amd64)
@@ -68,12 +67,33 @@ sitten
 
 ![8](https://github.com/user-attachments/assets/bb40e462-5d6b-482e-ad46-e2fcd46c6d11)
 
-Odotan hetken, tietokone saattaa suorittaa taustalla jotain.
+Sen jälkeen näyttö on tummana hetken aikaa n. 2 min. Odotan hetken, kone saattaa suorittaa jotain taustalla.
 
-Näyttö on tummana hetken aikaa. n. 2 min. 
 
-Hetken odottelun jälkeen Debian live käynnistyy, virallinen Debian on asennettavissa
+Hetken odottelun jälkeen Debian live käynnistyy, ja Debian on asennettavissa
 
 ![9](https://github.com/user-attachments/assets/0e2db746-1efd-4a31-98d5-17c8f32caa97) 
 
+## Debianin asennus 
+
+Asennetaan Debian täysversio VirtualBoxissa
+
+Ensiksi tulee varoitus
+
+"Untrusted application launcher"
+
+![10](https://github.com/user-attachments/assets/e4b40c92-2fc7-4542-bd6b-5912a6a86b41)
+
+jatketaan painamalla "Launch Anyway", ei kovin turvallista yleensä mutta olen virtuaaliympäristössä opettelemassa virtuaalikoneiden käyttämistä. En pidä mitään arkaluonteista tietokoneella.
+
+Sitten valitsen kieleksi Amerikan englannin.
+Sijaintitieto kelloa varten valitsen Helsinki.
+Näppäimistökieleksi Suomi, ja asettelu Macintosh
+Osionti kohdassa tyhjennän levyn asennusta varten, ja salaan koneen salasanalla.
+Käyttäjät, täytän tiedot oma nimi, kirjautumisnimi sekä tietokoneen nimi, mutta jätän salasanan pois tällä kertaa.
+Yhteenvedosta tarkistan asetukset ja tiedot ovat oikein.
+
+Asennus alkaa 15:20
+
+![11](https://github.com/user-attachments/assets/84cf90ff-b85a-4ee3-a246-05ce2b0a8d73)
 
