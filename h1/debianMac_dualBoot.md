@@ -1,4 +1,4 @@
-# Dual boot Debian on Mac
+![IMG_0332](https://github.com/user-attachments/assets/40254afe-08ae-4a70-b9f3-d27b78ebb106)![IMG_0330](https://github.com/user-attachments/assets/fa94b9e7-8107-45b1-8675-13a370a24fff)# Dual boot Debian on Mac
 
 ## Tehtävänanto
 
@@ -24,7 +24,7 @@ debian-live-12.6.0-amd64-xfce.iso
 
 Käytän BalenaEtcheria kirjoittamaan Debian käyttöjärjestelmä USB-tikulle: https://etcher.balena.io/
 
-![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942)
+![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942).
 Näyttökuva 1. BalenaEtcher
 
 ## Mac valmistelu
@@ -32,7 +32,7 @@ Näyttökuva 1. BalenaEtcher
 Avaan levytyökalun (disk utility) ja lisään uuden osion kiintolevylle, jostain syystä tietokone herjaa kun yritän muuttaa tallennustilaa ext4 muotoon.
 Käytän 50GB tallennustilaa ja MS-DOF(FAT) tallennusmuotoa. Vaihdan myöhemmin muodon kun pääsen muokkaamaan osioita Debian asennuksen yhteydessä.
 
-![Näyttökuva 2024-8-23 kello 23 36 57](https://github.com/user-attachments/assets/47b2b0c6-874a-43fe-9875-165eca65b8bb)
+![Näyttökuva 2024-8-23 kello 23 36 57](https://github.com/user-attachments/assets/47b2b0c6-874a-43fe-9875-165eca65b8bb). 
 Näyttökuva 2. Levytyökalu
 
 ## Asennus
@@ -42,14 +42,14 @@ Hetken kuluttua saan näkyviin Macin taltion, sekä EFI boot taltion.
 Vasemmalta oikealle valitsen keskimmäisen ensin, ei tapahtu mitään.
 Valitsen toisen EFI boot taltion vasemmalta laidalta.
 
-![IMG_0324](https://github.com/user-attachments/assets/1ee5c1c3-b5bd-4e1b-b299-4ae0d693b6d6)
+![IMG_0324](https://github.com/user-attachments/assets/c7e48ee7-98a4-4370-b429-a1f659c0a72e).
 Näyttökuva 3. Taltiot
 
 Tietokone lataa hetken, sitten avaa käynnistyslataajan näkymän, ja valitsen ensimmäisen vaihtoehdon "Live system (amd64)"
 
 ja hetken kuluttua Debian työpöytä tulee näkyviin.
 
-![IMG_0328](https://github.com/user-attachments/assets/1a3ba1e5-dbe3-48d8-9c59-e3f176499544)
+![IMG_0328](https://github.com/user-attachments/assets/da65a3b2-d703-4737-91bc-6b3d79f3b89c).
 Näyttökuva 4. Debian Live työpöytä
 
 Tässä kohtaa olen tyytyväinen live näkymään, ja voin aloittaa varsinaisen asennuksen.
@@ -61,21 +61,22 @@ Näppäimistökieli (asettelu): Suomi (Macintosh)
 Osiointi: Valitsen levyosion jonka tein Macin levytyökalussa, sd3 joka on ''unknown''. Tiedän sen koosta että sen on levy jota haluan käyttää. Kuva alla
 Käyttäjätiedot: Täytän kaikkiin kohtiin "uhse". Aikaisemmassa asennuksessa oli häikkää salasanan kohdalla, järjestelmä pyysi salasanaa kirjautuessani vaikka en asettanut sellaista.
 
-![IMG_0329](https://github.com/user-attachments/assets/38533573-218e-4e40-b005-c8ff21ddccf5)
+![IMG_0329](https://github.com/user-attachments/assets/a4aa8172-e735-4045-ba32-7f8294ff7cd9).
 Näyttökuva 5. Debian asennus -osiointi.
 
-![IMG_0330](https://github.com/user-attachments/assets/901f4388-5657-44c0-9fbf-08b93ac825b4)
+
+![IMG_0330](https://github.com/user-attachments/assets/9ed74a2b-f01b-418f-bdef-1c740bc03437).
 Näyttökuva 6. Debian asennus -käyttäjät.
 
-![IMG_0331](https://github.com/user-attachments/assets/e9102204-f3dd-48bc-8d23-002cd02bbdc0)
+![IMG_0331](https://github.com/user-attachments/assets/fa5282b2-d715-40d7-a15b-50ca243c6794).
 Näyttökuva 7. Debian asennus -kooste (osiointi).
 
-![IMG_0332](https://github.com/user-attachments/assets/a651e42e-f193-467f-a2b5-a40fa15451b3)
+![IMG_0332](https://github.com/user-attachments/assets/273f7682-da74-418d-bc24-ff63779d1adc).
 Näyttökuva 8. Debian asennus -virheviesti osioinnista.
 
-![IMG_0333](https://github.com/user-attachments/assets/ab564323-00ab-4974-a74e-f4085bce1932)
+![IMG_0333](https://github.com/user-attachments/assets/95034640-2b51-4d2a-9edf-3d6434176a2a).
 Näyttökuva 9. Debian työpöytä. Virheviestistä huolimatta Debian toimii normaalisti, ja kaikki näyttää olevan kunnossa.
 
-![IMG_0334](https://github.com/user-attachments/assets/701c2728-d3d5-47e2-837a-828dcc2c6c84)
+![IMG_0334](https://github.com/user-attachments/assets/a1f3fefd-a881-479e-b363-adec7a73d011).
 Näyttökuva 10. Debian pääte. Tarkistetaan polku, tarkistetaan sisältö, navigoidaan kansioiden välissä sekä luodaan uusi kansio sekä tiedosto.
 
