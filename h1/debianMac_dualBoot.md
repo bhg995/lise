@@ -1,4 +1,4 @@
-![IMG_0332](https://github.com/user-attachments/assets/40254afe-08ae-4a70-b9f3-d27b78ebb106)![IMG_0330](https://github.com/user-attachments/assets/fa94b9e7-8107-45b1-8675-13a370a24fff)# Dual boot Debian on Mac
+# Dual boot Debian on Mac
 
 ## Tehtävänanto
 
