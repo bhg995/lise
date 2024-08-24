@@ -6,8 +6,8 @@
 
 ## Laitteisto
 
-**- USB-tikku: Scandisk 128GB USB 3**
-**- Tietokone: MacBook Air (13-inch, 2017)**
+- **USB-tikku: Scandisk 128GB USB 3**
+- **Tietokone: MacBook Air (13-inch, 2017)**
 - Käyttöjärjestelmä: macOS Monterey 12.7.5
 - Prosessori: 1,8 GHz Kaksiytiminen Intel Core i5
 - Muisti: 8 Gt 1600 MHz DDR3
