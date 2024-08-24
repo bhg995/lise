@@ -28,7 +28,7 @@ _'These are files containing live images for the Debian GNU/Linux operating syst
 
 ### BalenaEtcher
 
-Käytän [BalenaEtcher](https://etcher.balena.io) ohjelmaa kirjoittamaan Debian [.iso](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.6.0-amd64-xfce.iso) kuva USB-muistiin. [2]
+Käytän [BalenaEtcher](https://etcher.balena.io) ohjelmaa kirjoittamaan Debian [.iso](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.6.0-amd64-xfce.iso) kuva USB-muistiin. [2][1]
 
 ![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942)
 
@@ -109,10 +109,8 @@ Debian 2024. Index of /debian-cd/current-live/amd64/iso-hybrid/. _https://cdimag
 
 **2. BalenaEtcher**
 BalenaEtcher 2024. Flash images to SD cards & USB drives. _https://etcher.balena.io_. filename: balenaEtcher-1.19.21-arm64.dmg, last modified: 2024-05-30. Ladattu 18.7.2024
-**3.**
-**4.**
 
-  **terokarvinen.com, Tero Karvinen**
+**terokarvinen.com, Tero Karvinen**
 _https://terokarvinen.com/_ Luettu 21.8.2024
 _https://terokarvinen.com/2023/create-a-web-page-using-github/_. Luettu 21.8.2024
 _https://terokarvinen.com/2021/install-debian-on-virtualbox/_. Luettu 21.8.2024
