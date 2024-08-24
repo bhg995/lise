@@ -24,7 +24,8 @@ debian-live-12.6.0-amd64-xfce.iso
 
 Käytän BalenaEtcheria kirjoittamaan Debian käyttöjärjestelmä USB-tikulle: https://etcher.balena.io/
 
-![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942).
+![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942)
+
 Näyttökuva 1. BalenaEtcher
 
 ## Mac valmistelu
@@ -32,7 +33,8 @@ Näyttökuva 1. BalenaEtcher
 Avaan levytyökalun (disk utility) ja lisään uuden osion kiintolevylle, jostain syystä tietokone herjaa kun yritän muuttaa tallennustilaa ext4 muotoon.
 Käytän 50GB tallennustilaa ja MS-DOF(FAT) tallennusmuotoa. Vaihdan myöhemmin muodon kun pääsen muokkaamaan osioita Debian asennuksen yhteydessä.
 
-![Näyttökuva 2024-8-23 kello 23 36 57](https://github.com/user-attachments/assets/47b2b0c6-874a-43fe-9875-165eca65b8bb). 
+![Näyttökuva 2024-8-23 kello 23 36 57](https://github.com/user-attachments/assets/47b2b0c6-874a-43fe-9875-165eca65b8bb)
+
 Näyttökuva 2. Levytyökalu
 
 ## Asennus
@@ -42,7 +44,8 @@ Hetken kuluttua saan näkyviin Macin taltion, sekä EFI boot taltion.
 Vasemmalta oikealle valitsen keskimmäisen ensin, ei tapahtu mitään.
 Valitsen toisen EFI boot taltion vasemmalta laidalta.
 
-![IMG_0324](https://github.com/user-attachments/assets/c7e48ee7-98a4-4370-b429-a1f659c0a72e).
+
+
 Näyttökuva 3. Taltiot
 
 Tietokone lataa hetken, sitten avaa käynnistyslataajan näkymän, ja valitsen ensimmäisen vaihtoehdon "Live system (amd64)"
