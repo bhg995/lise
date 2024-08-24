@@ -32,7 +32,7 @@ Käytän [BalenaEtcher](https://etcher.balena.io) ohjelmaa kirjoittamaan Debian 
 
 ![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942)
 
-Näyttökuva 1. <sub>BalenaEtcher kirjoittamassa USB-muistiin, _flashing_.</sub>
+<sub>Näyttökuva 1. BalenaEtcher kirjoittamassa USB-muistiin, _flashing_.</sub>
 
 
 ## Mac valmistelu
@@ -41,7 +41,7 @@ Avaan levytyökalun (disk utility) ja lisään uuden osion kiintolevylle. Käyt�
 
 ![Näyttökuva 2024-8-23 kello 23 36 57](https://github.com/user-attachments/assets/47b2b0c6-874a-43fe-9875-165eca65b8bb)
 
-Näyttökuva 2. <sub>Osiointi levytyökalulla.</sub>
+<sub>Näyttökuva 2. Osiointi levytyökalulla.</sub>
 
 
 ## Debianin Asennus Mac tietokoneelle
@@ -105,7 +105,7 @@ Tarkistetaan polku, tarkistetaan sisältö, navigoidaan kansioiden välissä sek
 
 ![Näyttökuva 2024-8-24 kello 13 12 25](https://github.com/user-attachments/assets/71c58137-5aa5-4cf8-9e23-884cd2d6e2e3)
 
-Näyttökuva 10. <sub>Debian pääte.</sub>
+<sub>Näyttökuva 10. Debian pääte.</sub>
 
 ## Lähteet
 
