@@ -44,7 +44,7 @@ Hetken kuluttua saan näkyviin Macin taltion, sekä EFI boot taltion.
 Vasemmalta oikealle valitsen keskimmäisen ensin, ei tapahtu mitään.
 Valitsen toisen EFI boot taltion vasemmalta laidalta.
 
-
+![Näyttökuva 2024-8-24 kello 13 10 43](https://github.com/user-attachments/assets/7cb67ec7-e093-4067-ae6f-732f13d0bf5d)
 
 Näyttökuva 3. Taltiot
 
@@ -52,7 +52,8 @@ Tietokone lataa hetken, sitten avaa käynnistyslataajan näkymän, ja valitsen e
 
 ja hetken kuluttua Debian työpöytä tulee näkyviin.
 
-![IMG_0328](https://github.com/user-attachments/assets/da65a3b2-d703-4737-91bc-6b3d79f3b89c).
+![Näyttökuva 2024-8-24 kello 13 11 01](https://github.com/user-attachments/assets/1889fb31-9439-4969-addb-25f585c931b7)
+
 Näyttökuva 4. Debian Live työpöytä
 
 Tässä kohtaa olen tyytyväinen live näkymään, ja voin aloittaa varsinaisen asennuksen.
@@ -64,22 +65,27 @@ Näppäimistökieli (asettelu): Suomi (Macintosh)
 Osiointi: Valitsen levyosion jonka tein Macin levytyökalussa, sd3 joka on ''unknown''. Tiedän sen koosta että sen on levy jota haluan käyttää. Kuva alla
 Käyttäjätiedot: Täytän kaikkiin kohtiin "uhse". Aikaisemmassa asennuksessa oli häikkää salasanan kohdalla, järjestelmä pyysi salasanaa kirjautuessani vaikka en asettanut sellaista.
 
-![IMG_0329](https://github.com/user-attachments/assets/a4aa8172-e735-4045-ba32-7f8294ff7cd9).
+![Näyttökuva 2024-8-24 kello 13 11 14](https://github.com/user-attachments/assets/548aa362-3f76-42fa-bf3e-5343df9e3bb2)
+
 Näyttökuva 5. Debian asennus -osiointi.
 
+![Näyttökuva 2024-8-24 kello 13 11 26](https://github.com/user-attachments/assets/37efc19d-c0bd-440f-bfb6-bae914d2b543)
 
-![IMG_0330](https://github.com/user-attachments/assets/9ed74a2b-f01b-418f-bdef-1c740bc03437).
 Näyttökuva 6. Debian asennus -käyttäjät.
 
-![IMG_0331](https://github.com/user-attachments/assets/fa5282b2-d715-40d7-a15b-50ca243c6794).
+![Näyttökuva 2024-8-24 kello 13 11 41](https://github.com/user-attachments/assets/9275d533-3954-4c38-8874-bf5eb65e8090)
+
 Näyttökuva 7. Debian asennus -kooste (osiointi).
 
-![IMG_0332](https://github.com/user-attachments/assets/273f7682-da74-418d-bc24-ff63779d1adc).
+![Näyttökuva 2024-8-24 kello 13 11 58](https://github.com/user-attachments/assets/2d7dad99-e377-4fd7-a352-cbb47a5f94d8)
+
 Näyttökuva 8. Debian asennus -virheviesti osioinnista.
 
-![IMG_0333](https://github.com/user-attachments/assets/95034640-2b51-4d2a-9edf-3d6434176a2a).
+![Näyttökuva 2024-8-24 kello 13 12 12](https://github.com/user-attachments/assets/1837f3e6-fdbb-477d-8392-a3f4216238d4)
+
 Näyttökuva 9. Debian työpöytä. Virheviestistä huolimatta Debian toimii normaalisti, ja kaikki näyttää olevan kunnossa.
 
-![IMG_0334](https://github.com/user-attachments/assets/a1f3fefd-a881-479e-b363-adec7a73d011).
+![Näyttökuva 2024-8-24 kello 13 12 25](https://github.com/user-attachments/assets/71c58137-5aa5-4cf8-9e23-884cd2d6e2e3)
+
 Näyttökuva 10. Debian pääte. Tarkistetaan polku, tarkistetaan sisältö, navigoidaan kansioiden välissä sekä luodaan uusi kansio sekä tiedosto.
 
