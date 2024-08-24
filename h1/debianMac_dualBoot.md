@@ -1,39 +1,42 @@
 # Dual boot Debian on Mac
 
-## Tehtävänanto
+## Debian OS Asennus USB-tikulla
 
-a) Asenna Linux ~~virtuaalikoneeseen~~. Tässä raportissa asennetaan Linux Debian MacOS X:n rinnalle.
-
-b) Tee ja raportoi jokin yksinkertainen toimenpide haluamallasi Linux-ohjelmalla.
 
 
 ## Laitteisto
 
-- Tietokone: MacBook Air (13-inch, 2017)
+### - USB-tikku: Scandisk 128GB USB 3
+### - Tietokone: MacBook Air (13-inch, 2017)
 - Käyttöjärjestelmä: macOS Monterey 12.7.5
 - Prosessori: 1,8 GHz Kaksiytiminen Intel Core i5
 - Muisti: 8 Gt 1600 MHz DDR3
 - Näytönohjain: Intel HD Graphics 6000, 1536 Mt
 
-USB-tikku: Scandisk 128GB USB 3
+
 
 ## OS valmistelu
 
-Tiedosto ladattu 22.8 klo 19:45 sivulta: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/
+### Debian Live ISO
+
+https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid. Ladattu 22.8
 
 debian-live-12.6.0-amd64-xfce.iso
 
-Käytän BalenaEtcheria kirjoittamaan Debian käyttöjärjestelmä USB-tikulle: https://etcher.balena.io/
+### BalenaEtcher
+
+. Ladattu 18.7
+
+Käytän [BalenaEtcher]([url](https://etcher.balena.io)) ohjelmaa kirjoittamaan Debian .iso kuva USB-muistiin
 
 ![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942)
 
-Näyttökuva 1. BalenaEtcher
+Näyttökuva 1. BalenaEtcher kirjoittamassa USB-muistiin, _flashing_.
 
 
 ## Mac valmistelu
 
-Avaan levytyökalun (disk utility) ja lisään uuden osion kiintolevylle, jostain syystä tietokone herjaa kun yritän muuttaa tallennustilaa ext4 muotoon.
-Käytän 50GB tallennustilaa ja MS-DOF(FAT) tallennusmuotoa. Vaihdan myöhemmin muodon kun pääsen muokkaamaan osioita Debian asennuksen yhteydessä.
+Avaan levytyökalun (disk utility) ja lisään uuden osion kiintolevylle. Käytän 50GB tallennustilaa ja MS-DOF(FAT) tallennusmuotoa. Vaihdan myöhemmin muodon kun pääsen muokkaamaan osioita Debian asennuksen yhteydessä.
 
 ![Näyttökuva 2024-8-23 kello 23 36 57](https://github.com/user-attachments/assets/47b2b0c6-874a-43fe-9875-165eca65b8bb)
 
