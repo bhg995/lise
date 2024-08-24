@@ -28,7 +28,7 @@ _'These are files containing live images for the Debian GNU/Linux operating syst
 
 ### BalenaEtcher
 
-Käytän [BalenaEtcher](https://etcher.balena.io) ohjelmaa kirjoittamaan Debian [.iso](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.6.0-amd64-xfce.iso) kuva USB-muistiin
+Käytän [BalenaEtcher](https://etcher.balena.io) ohjelmaa kirjoittamaan Debian [.iso](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.6.0-amd64-xfce.iso) kuva USB-muistiin. [2]
 
 ![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942)
 
@@ -37,7 +37,7 @@ Käytän [BalenaEtcher](https://etcher.balena.io) ohjelmaa kirjoittamaan Debian 
 
 ## Mac valmistelu
 
-Avaan levytyökalun (disk utility) ja lisään uuden osion kiintolevylle. Käytän 50GB tallennustilaa ja MS-DOS(FAT) tallennusmuotoa, tällä hetkellä levytyökalu suostuu vain siihen. Voin vaihtaa myöhemmin muodon kun pääsen muokkaamaan osioita Debian asennuksen yhteydessä. ext4 on myös vaihtoehto.
+Avaan levytyökalun (disk utility) ja lisään uuden osion kiintolevylle. Käytän 50GB tallennustilaa ja MS-DOS(FAT) tallennusmuotoa, tällä hetkellä levytyökalu suostuu vain siihen. Vaihdan myöhemmin muodon, kun pääsen muokkaamaan osioita Debian asennuksen yhteydessä sopivaksi muodoksi, ext4.
 
 ![Näyttökuva 2024-8-23 kello 23 36 57](https://github.com/user-attachments/assets/47b2b0c6-874a-43fe-9875-165eca65b8bb)
 
@@ -47,61 +47,56 @@ Avaan levytyökalun (disk utility) ja lisään uuden osion kiintolevylle. Käyt�
 ## Debianin Asennus Mac tietokoneelle
 
 - Käynnistän Mac koneen uudelleen, ja pidän alt/option näppäintä (⌥ symboli näppäimistöllä).
-- Hetken kuluttua näkyviin tulee Macin taltion, sekä 2 EFI boot taltioita. Tietokone antaa järjestyksessä vaihtoehdon käynnistää käyttöjärjestelmän, joko hDd taltiolta OS X:n, USB-tikulta Debian 12 tai aikaisemman luodun MS-DOS(FAT) taltiolta.
-- Valitsen keskimmäisen.
+- Tietokone antaa järjestyksessä vaihtoehdon käynnistää käyttöjärjestelmän, joko hDd taltiolta OS X:n, USB-tikulta Debian 12 tai aikaisemman luodun MS-DOS(FAT) taltiolta, joka on tyhjä.
+- Valitaan USB-tikun Debian 12
 
 ![Näyttökuva 2024-8-24 kello 13 10 43](https://github.com/user-attachments/assets/7cb67ec7-e093-4067-ae6f-732f13d0bf5d)
 
-Näyttökuva 3. <sub>Taltiot</sub>
+<sub>Näyttökuva 3. Taltiot</sub>
 
-
-Tietokone lataa hetken, sitten avaa käynnistyslataajan näkymän, valitsen ensimmäisen vaihtoehdon "Live system (amd64)", ja avaa Debian Live työpöydän näkymän.
+Käynnistyslataajan näkymä tulee esiin, valitsen "Live system (amd64)", joka avaa Debian Live työpöydän näkymän.
 
 ![Näyttökuva 2024-8-24 kello 13 11 01](https://github.com/user-attachments/assets/1889fb31-9439-4969-addb-25f585c931b7)
 
-Näyttökuva 4. <sub>Debian Live työpöytänäkymä</sub>
-
+<sub>Näyttökuva 4. Debian Live työpöytänäkymä</sub>
 
 Tässä kohtaa olen tyytyväinen live näkymään, ja voin aloittaa varsinaisen asennuksen.
 
-Asennustyökalussa valitsen seuraavat vaihtoehdot
-Kieli: Amerikanenglanti
-Sijainti: Helsinki
-Näppäimistökieli (asettelu): Suomi (Macintosh)
-Osiointi: Valitsen levyosion jonka tein Macin levytyökalussa, sd3 joka on 'unknown'. Tiedän sen koosta että sen on levy jota haluan käyttää.
-Käyttäjätiedot: Täytän kaikkiin kohtiin "uhse". VirtualBox asennuksessa, Debian pyysi salasanaa kirjautuessani vaikka en asettanut sellaista.
-
+Asennustyökalussa valitsen seuraavat vaihtoehdot:
+- Kieli: Amerikanenglanti
+- Sijainti: Helsinki
+- Näppäimistökieli (asettelu): Suomi (Macintosh)
+- Osiointi: Valitsen levyosion jonka tein Macin levytyökalussa, sd3 joka on 'unknown'. Tiedän sen koosta että sen on levy jota haluan käyttää.
+- Käyttäjätiedot: Täytän kaikkiin kohtiin "uhse". VirtualBox asennuksessa, Debian pyysi salasanaa kirjautuessani vaikka en asettanut sellaista.
 
 ![Näyttökuva 2024-8-24 kello 13 11 14](https://github.com/user-attachments/assets/548aa362-3f76-42fa-bf3e-5343df9e3bb2)
 
-Näyttökuva 5. <sub>Debian asennus -osiointi.</sub>
-
+<sub>Näyttökuva 5. Debian asennus -osiointi.</sub>
 
 ![Näyttökuva 2024-8-24 kello 13 11 26](https://github.com/user-attachments/assets/37efc19d-c0bd-440f-bfb6-bae914d2b543)
 
-Näyttökuva 6. <sub>Debian asennus -käyttäjät.</sub>
+<sub>Näyttökuva 6. Debian asennus -käyttäjät.</sub>
 
+Asennuksen koosteesta näkyy tarkempi tieto osioinnista.
 
 ![Näyttökuva 2024-8-24 kello 13 11 41](https://github.com/user-attachments/assets/9275d533-3954-4c38-8874-bf5eb65e8090)
 
-Näyttökuva 7. <sub>Debian asennus -kooste (osiointi).</sub>
-
+<sub>Näyttökuva 7. Debian asennus -kooste (osiointi).</sub>
 
 Virheviesti tulee vastaan 'EFI file system creation failed'. Painan continue.
 
 ![Näyttökuva 2024-8-24 kello 13 11 58](https://github.com/user-attachments/assets/2d7dad99-e377-4fd7-a352-cbb47a5f94d8)
 
-Näyttökuva 8. <sub>Debian asennus -virheviesti osioinnista.</sub>
-
+<sub>Näyttökuva 8. Debian asennus -virheviesti osioinnista.</sub>
 
 Virheviestistä huolimatta Debian toimii normaalisti, kaikki näyttää olevan päältä päin kunnossa.
 
 ![Näyttökuva 2024-8-24 kello 13 12 12](https://github.com/user-attachments/assets/1837f3e6-fdbb-477d-8392-a3f4216238d4)
 
-Näyttökuva 9. <sub>Debian työpöytä.</sub>
+<sub>Näyttökuva 9. Debian työpöytä.</sub>
 
 
-Tarkistetaan polku, tarkistetaan sisältö, navigoidaan kansioiden välissä sekä luodaan uusi kansio sekä tiedosto.
+Tarkistetaan nykyyisen kansion polku ja sisältö, navigoidaan kansioiden välissä ja luodaan uusi kansio sekä tiedosto.
 
 ![Näyttökuva 2024-8-24 kello 13 12 25](https://github.com/user-attachments/assets/71c58137-5aa5-4cf8-9e23-884cd2d6e2e3)
 
