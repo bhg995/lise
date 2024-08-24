@@ -27,7 +27,7 @@ debian-live-12.6.0-amd64-xfce.iso
 
 . Ladattu 18.7
 
-Käytän [BalenaEtcher]([url](https://etcher.balena.io)) ohjelmaa kirjoittamaan Debian .iso kuva USB-muistiin
+Käytän [BalenaEtcher](https://etcher.balena.io) ohjelmaa kirjoittamaan Debian .iso kuva USB-muistiin
 
 ![Näyttökuva 2024-8-23 kello 23 30 27](https://github.com/user-attachments/assets/b40074bb-90dd-4954-a889-a856d8780942)
 
