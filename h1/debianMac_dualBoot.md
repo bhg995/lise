@@ -111,6 +111,6 @@ Debian 2024. Index of /debian-cd/current-live/amd64/iso-hybrid/. _https://cdimag
 BalenaEtcher 2024. Flash images to SD cards & USB drives. _https://etcher.balena.io_. filename: balenaEtcher-1.19.21-arm64.dmg, last modified: 2024-05-30. Ladattu 18.7.2024
 
 **terokarvinen.com, Tero Karvinen**
-_https://terokarvinen.com/_ Luettu 21.8.2024
-_https://terokarvinen.com/2023/create-a-web-page-using-github/_. Luettu 21.8.2024
-_https://terokarvinen.com/2021/install-debian-on-virtualbox/_. Luettu 21.8.2024
+- _https://terokarvinen.com/_ Luettu 21.8.2024
+- _https://terokarvinen.com/2023/create-a-web-page-using-github/_. Luettu 21.8.2024
+- _https://terokarvinen.com/2021/install-debian-on-virtualbox/_. Luettu 21.8.2024
