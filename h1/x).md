@@ -9,7 +9,7 @@
 
 ## Free Software Foundation
 
-Vapaa ohjelmisto. Tarkoittaa että henkilöillä ja tahoilla on oikeus sovelluksen tai ohjelmiston vapaata 1. käyttöä, 2. muokkaamista, 3. alkuperäisen ohjelman jakamista omien muokkausten jälkeen. [2]
+Vapaa ohjelmisto. Tarkoittaa että henkilöillä ja tahoilla on oikeus sovelluksen tai ohjelmiston vapaata 1. käyttöä, 2. muokkaamista, 3. alkuperäisen ohjelman jakamista 4. aplkuperäisen ohjelman jakaminen omien muokkausten jälkeen. [2]
 
 ## Lähteet
 
