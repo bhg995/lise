@@ -84,12 +84,12 @@ Ensiksi tulee varoitus "Untrusted application launcher"
 
 jatketaan painamalla "Launch Anyway", ei kovin turvallista yleensä mutta olen virtuaaliympäristössä opettelemassa virtuaalikoneiden käyttämistä. En pidä mitään arkaluonteista tietokoneella.
 
-Sitten valitsen kieleksi Amerikan englannin.
-Sijaintitieto kelloa varten valitsen Helsinki.
-Näppäimistökieleksi Suomi, ja asettelu Macintosh
-Osionti kohdassa tyhjennän levyn asennusta varten, ja salaan koneen salasanalla.
-Käyttäjät, täytän tiedot oma nimi (uhse), ja nimeän samalla tavalla myös kirjautumisnimen sekä tietokoneen nimen, mutta jätän salasanan pois tällä kertaa.
-Yhteenvedosta tarkistan asetukset ja tiedot ovat oikein.
+* Sitten valitsen kieleksi Amerikan englannin.
+* Sijaintitieto kelloa varten valitsen Helsinki.
+* Näppäimistökieleksi Suomi, ja asettelu Macintosh
+* Osionti kohdassa tyhjennän levyn asennusta varten, ja salaan koneen salasanalla.
+* Käyttäjät, täytän tiedot oma nimi (uhse), ja nimeän samalla tavalla myös kirjautumisnimen sekä tietokoneen nimen, mutta jätän salasanan pois tällä kertaa.
+* Yhteenvedosta tarkistan asetukset ja tiedot ovat oikein.
 
 Asennus alkaa Host-koneen mukaan 15:20 ja on valmis 15:36
 
