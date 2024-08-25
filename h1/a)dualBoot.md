@@ -1,6 +1,6 @@
 # Dual boot Debian on Mac
 
-## Debian OS Asennus USB-tikulla
+## Debian 12 OS Asennus USB-tikulla Mac tietokoneelle
 
 
 
@@ -95,12 +95,6 @@ Virheviestistä huolimatta Debian toimii normaalisti, kaikki näyttää olevan p
 
 <sub>Näyttökuva 9. Debian työpöytä.</sub>
 
-
-Tarkistetaan nykyyisen kansion polku ja sisältö, navigoidaan kansioiden välissä ja luodaan uusi kansio sekä tiedosto.
-
-![Näyttökuva 2024-8-24 kello 13 12 25](https://github.com/user-attachments/assets/71c58137-5aa5-4cf8-9e23-884cd2d6e2e3)
-
-<sub>Näyttökuva 10. Debian pääte.</sub>
 
 ## Lähteet
 
