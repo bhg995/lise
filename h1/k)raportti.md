@@ -2,7 +2,7 @@
 
 - Asennettu Debian 12 OS Mac tietokoneelle, Mac OS X: rinnalle.
 - Käynnistetään tietokone ja avataan työpöytänäkymä.
-- Avataan terminaali. **CTRL+ALT+T**.
+- Avataan terminaali. **CTRL+ALT & T**.
 - Käytetään komentoja **pwd** ja **cd**, tarkistetaan polku ja navigoidaan. **ls** komennolla voidaan listaa kansion sisältö.
 - Käytetään komentoja **mkdir**, jolla voi luoda kansion, ja komento **touch** jolla voi luoda tiedoston.
 - Luodaan ensin kansio _mallit_, nykyisestä kansiosta _/home_, kansioon _/home/uhse/Templates_.
