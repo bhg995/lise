@@ -10,7 +10,7 @@
 - Disk space: 32Gt
 - Näytönohjain: Broadcom VideoCore VI @ 500 MHz
 
-## Linux Commands
+## x)Linux Commands
 
 Linux uses commands that dates way back, even before internet was publicly available. Most of these if not all commands have stayed unchanged, 
 and many generations have used the same commands to, navigate around directories, creating new content, deleting, updating and more.
