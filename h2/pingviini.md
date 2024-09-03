@@ -80,15 +80,30 @@ To install multiple programs at once you can use the command for download, and t
 
     $ sudo apt update && sudo apt install htop ncdu cowsay tldr bat
 
-For this assignment I downloaded the following programs
+![multiple](https://github.com/user-attachments/assets/3c067151-6cf4-41e5-8320-39f6b40984a6)
+
+It looks like "htop" & "ncdu" came with the OS, so the terminal shows me that, it has both of them already in the system and they are the newest version.
+
+### For this assignment I downloaded the following programs
 
 "htop" which shows interactively running processes and usage of the resources in clear TUI.
 
+![htop](https://github.com/user-attachments/assets/ce95dd51-853f-4469-abcc-6328ffdb51b8)
 
 
 "ncdu" that shows systems size in memory usage, also helps you find large files and folders.
 
+![ncdu](https://github.com/user-attachments/assets/f9cf26af-a34e-499f-8ee1-e04bdb1d6f80)
 
 
 "cowsay", is funny little program that creates figure of cow and inserts your text to it speechbuble.
 
+![cowsay](https://github.com/user-attachments/assets/9ca70c81-3b52-4ad5-873b-8edf345b0d39)
+
+## c) Filesystem Hierarchy Standard
+
+'/' on koko tietojärjestelmän juurikansio. Kaikki tiedostot ja hakemistot ovat tämän alaisuudessa
+
+    $ ls /
+
+'/home/'
