@@ -102,8 +102,112 @@ It looks like "htop" & "ncdu" came with the OS, so the terminal shows me that, i
 
 ## c) Filesystem Hierarchy Standard
 
-'/' on koko tietojärjestelmän juurikansio. Kaikki tiedostot ja hakemistot ovat tämän alaisuudessa
+'/' Root directory for all files and folders. All and any file or folder is located in here
 
     $ ls /
+    bin  boot  dev  etc  home  lib  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 
-'/home/'
+
+'/home/' is the homefolder for all the users. Only one user in this OS now, uhse
+
+    $ ls /home/
+    uhse
+'/home/user/' this would be a directory personal to the user, where the user can store permanently and without needing privileges
+
+    ls /home/user/
+
+'/etc/' this directory contains all the filesettings and configurations
+
+    $ ls /etc/
+    adduser.conf            default              host.conf        locale.alias    opt           request-key.conf  sudoers.d
+    alsa                    deluser.conf         hostname         locale.gen      os-release    request-key.d     sudo_logsrvd.conf
+    alternatives            dhcp                 hosts            localtime       PackageKit    resolv.conf       sv
+    apache2                 dhcpcd.conf          hosts.allow      logcheck        pam.conf      resolv.conf.bak   sysctl.conf
+    apparmor                dictionaries-common  hosts.deny       login.defs      pam.d         resolvconf.conf   sysctl.d
+    apparmor.d              dillo                hp               logrotate.conf  papersize     rmt               systemd
+    apt                     dphys-swapfile       idmapd.conf      logrotate.d     passwd        rpc               terminfo
+    avahi                   dpkg                 ifplugd          machine-id      passwd-       rpi-issue         timezone
+    bash.bashrc             e2scrub.conf         init             magic           paxctld.conf  rsyslog.conf      timidity
+    bash_completion         emacs                init.d           magic.mime      perl          rsyslog.d         tmpfiles.d
+    bash_completion.d       environment          initramfs-tools  mailcap         pip.conf      RTIMULib.ini      triggerhappy
+    bindresvport.blacklist  ethertypes           inputrc          mailcap.order   pipewire      runit             ucf.conf
+    binfmt.d                fake-hwclock.data    insserv.conf.d   manpath.config  plymouth      sane.d            udev
+    bluetooth               fb.modes             ipp-usb          matplotlibrc    polkit-1      security          udisks2
+    ca-certificates         firebird             iproute2         menu-methods    ppp           selinux           ufw
+    ca-certificates.conf    fonts                issue            mime.types      printcap      sensors3.conf     unbound
+    chromium                fstab                issue.net        mke2fs.conf     profile       sensors.d         update-motd.d
+    chromium.d              fuse.conf            java             mkshrc          profile.d     services          UPower
+    cifs-utils              gai.conf             java-11-openjdk  modprobe.d      protocols     sgml              usb_modeswitch.conf
+    console-setup           gdb                  kernel           modules         pulse         shadow            usb_modeswitch.d
+    cron.d                  geoclue              ld.so.cache      modules-load.d  python2.7     shadow-           vdpau_wrapper.cfg
+    cron.daily              ghostscript          ld.so.conf       motd            python3       shells            vim
+    cron.hourly             glvnd                ld.so.conf.d     mtab            python3.9     skel              vnc
+    cron.monthly            gnome                ld.so.preload    mysql           rc0.d         snmp              vulkan
+    crontab                 groff                libaudit.conf    nanorc          rc1.d         ssh               wgetrc
+    cron.weekly             group                libblockdev      netconfig       rc2.d         ssl               wpa_supplicant
+    cups                    group-               libibverbs.d     network         rc3.d         subgid            X11
+    cupshelpers             gshadow              libnl-3          networks        rc4.d         subgid-           xattr.conf
+    dbus-1                  gshadow-             libpaper.d       nftables.conf   rc5.d         subuid            xdg
+    dconf                   gss                  libreoffice      nsswitch.conf   rc6.d         subuid-           xml
+    debconf.conf            gtk-2.0              lightdm          openal          rc.local      sudo.conf
+    debian_version          gtk-3.0              lighttpd         openni2         rcS.d         sudoers
+
+'/media/' this directory contains all the portable media, such as CD-ROM or USB stick.
+Currently there is nothing portable in my computer, so the list shows empty
+
+    ls /media/
+
+'/var/log/' this directory contains log files, that are records incidents, errors and other system states. They are used for troubleshooting.
+
+    ls /var/log/
+    alternatives.log  boot.log       cups        dpkg.log  fontconfig.log  kern.log  messages  syslog    Xorg.0.log
+    apt               bootstrap.log  daemon.log  faillog   hp              lastlog   private   user.log  Xorg.0.log.old
+    auth.log          btmp           debug       firebird  journal         lightdm   runit     wtmp
+
+## d)Manual & grep
+
+Simply put grep is CLI, that fetches from the text lines, anything that matches your search.
+
+    $ grep "looking for this sentence" fromThisFile.txt
+
+This command would search from fromThisFile.txt anything that matches "looking for this sentence".
+
+    $ grep -n "looking for this sentence" fromThisFile.txt
+
+This command is same as previous, additionally it prints all the linenumbers where it found the matches.
+
+    $ man grep
+
+Info about the grep.
+
+## e) Hardware
+
+    $ sudo lshw -short -sanitize
+    H/W path              Device     Class      Description
+    =======================================================
+                                 system     Raspberry Pi 4 Model B Rev 1.5
+    /0                               bus        Motherboard
+    /0/1                             processor  cpu
+    /0/1/0                           memory     32KiB L1 Cache
+    /0/2                             processor  cpu
+    /0/2/0                           memory     32KiB L1 Cache
+    /0/3                             processor  cpu
+    /0/3/0                           memory     32KiB L1 Cache
+    /0/4                             processor  cpu
+    /0/4/0                           memory     32KiB L1 Cache
+    /0/5                             processor  l2-cache0
+    /0/6                             memory     3794MiB System memory
+    /0/0                             bridge     BCM2711 PCIe Bridge
+    /0/0/0                           bus        VL805 USB 3.0 Host Controller
+    /0/0/0/0              usb1       bus        xHCI Host Controller
+    /0/0/0/0/1                       bus        USB2.0 Hub
+    /0/0/0/0/1/4                     input      USB Receiver
+    /0/0/0/1              usb2       bus        xHCI Host Controller
+    /0/0/0/1/2            scsi0      storage    USB DISK
+    /0/0/0/1/2/0.0.0      /dev/sda   disk       125GB USB DISK
+    /0/0/0/1/2/0.0.0/0    /dev/sda   disk       125GB 
+    /0/0/0/1/2/0.0.0/0/1             volume     512MiB EFI GPT partition
+    /0/0/0/1/2/0.0.0/0/2  /dev/sda2  volume     115GiB Linux filesystem partition
+    /0/0/0/1/2/0.0.0/0/3  /dev/sda3  volume     976MiB Linux swap volume
+    /1                    eth0       network    Ethernet interface
+
