@@ -4,9 +4,15 @@ this a regular text
 
 couple of empty lines
 
+<br>
+
 ## and this should be h2
 
-websites? https://google.com
+websites? 
+
+---
+
+https://google.com
 
 code:
 
