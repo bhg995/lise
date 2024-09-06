@@ -32,12 +32,26 @@ Käynnistys:
 
 ![cli_screenshot](https://github.com/user-attachments/assets/66758ff4-95b3-447a-8567-02b5073f9e8b)
 
+<sub>Näyttökuva 1. käyttöliittymä</sub>
 
 Apache käynnistyi kuten odotetusti, mutta käynnistyksessä järjestelmä ilmoittaa
 
 `apachectl[22731]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message`
 
-Koitin selvittää mistä tämä johtuu. Aloitin Googlesta, kirjoitin 
+Koitin selvittää mistä tämä johtuu. Aloitin Googlesta, ja kirjoitin koko tekstin hakukenttään. Listan kärjessä oli [DigitalOceanin]([url](https://www.digitalocean.com/community/tutorials/apache-configuration-error-ah00558-could-not-reliably-determine-the-server-s-fully-qualified-domain-name)) sivu, jossa se käsittelee juuri tätä aihetta.
+
+Sivulla sanotaan näin <br>
+**Apache Configuration Error AH00558: Could not reliably determine the server's fully qualified domain name**<br>
+<p>An Apache `AH00558: Could not reliably determine the server's fully qualified domain name message` is generated when Apache is not configured with a global ServerName directive. The message is mainly for informational purposes, and an AH00558 error will not prevent Apache from running correctly.</p>
+
+DigitalOceanin sivulla oli ohje, miten sai tämän vian korjattua. Samalla oli myös tarkempi ohje kyseiselle vianmääritykselle.
+
+Lyhyt ohje:
+
+![2024-09-06-200742_1920x1080_scrot](https://github.com/user-attachments/assets/1fa5bc40-4ab9-45a4-b55b-180275129ea7)
+
+<sub>Näyttökuva 2. DigitalOceanin ohje virheelle AH00558</sub>
+
 
 Sivustoja:
 
