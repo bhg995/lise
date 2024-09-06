@@ -72,5 +72,5 @@
 
     active (running)
 
-### The text is usually displayed in green
+The text is usually displayed in green
 
