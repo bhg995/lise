@@ -88,7 +88,7 @@ Seuraavalla komennolla tarkistin lokitiedot
 
     $ tail -f /var/log/apache2/access.log
 
-    ![accesLog](https://github.com/user-attachments/assets/3b532bc4-5708-42e1-af0a-bc69327fa750)
+  ![accesLog](https://github.com/user-attachments/assets/3b532bc4-5708-42e1-af0a-bc69327fa750)
 
 
 ## Haasteet & Virheviestit
