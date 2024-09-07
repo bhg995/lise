@@ -1,15 +1,16 @@
 
 # Name Based Virtual Host Support
 
-## Equipment
+## Laitteisto
 
-- **Screen: AOC G2490VXA, 24" QHD(1440p), 144Hz**
+- **Näyttö: AOC G2490VXA, 24" QHD(1440p), 144Hz**
 - **Raspberry Pi 4 model B 4 Gt**
-- Operating Sytem: Raspbian OS 32bit kernel (based on Debian)
+- Käyttöjärjestelmä: Raspberry Pi OS 32bit kernel (based on Debian)
 - CPU: Broadcom BCM2711 SoC with a 1.8 GHz 64-bit quad-core ARM Cortex-A72 processor, with 1 MB shared L2 cache.
-- Memory: 4 Gt
-- Disk space: 32Gt
 - Näytönohjain: Broadcom VideoCore VI @ 500 MHz
+- Muisti: 4 Gt
+- Tallennustila: 32 Gt
+
 
 
 ## x) Name-based Virtual Host Support
@@ -54,11 +55,16 @@ Ensin:
     $ curl localhost
     $ curl -I localhost
 
-Joka latasi sivuston HTML-koodin kehotteeseen
+Käytin `localhost` tarkistamisessa lyhyttä muotoa. Pidempi muoto olisi...
+
+>     $ curl http://localhost
+      $ curl -I http://localhost
+
+... tämä latasi sivuston HTML-koodin kehotteeseen
 
 ![curlHost](https://github.com/user-attachments/assets/37782d6d-4bff-438b-a239-7332fc081d02)
 
-Seuraava komento näyttää lyhyesti ja ytimekkäästi, että webbipalvelin toimii. Koodi `200` joka on `OK`. Perusvastaus hyväksytylle HTTP pyynnölle. Mukana myös muutakin tietoa, kuten sisällön muoto, viimeksi muokattu jne.
+`curl -I` komento näyttää lyhyesti, että webbipalvelin toimii. Koodi `200` joka on `OK`. Perusvastaus hyväksytylle HTTP pyynnölle. Mukana myös muutakin tietoa, kuten sisällön muoto, viimeksi muokattu jne.
 
 ![curl_I_HOST](https://github.com/user-attachments/assets/fa2688dd-82f3-4f9b-a05f-ffd1f3d9f5f5)
 
@@ -69,11 +75,9 @@ Samalla tarkistin että se avautuu selaimella:
 
     $ firefox localhost
 
-Tarkistaessani toimivuutta, käytän `localhost` tosi lyhyessä muodossa. Pidempi & tarkempi muoto on:
-
-    curl
-
 ## Haasteet & Virheviestit
+
+### Could not reliably determine the server's fully qualified domain name, AH00558
 
 Törmäsin virheeseen Apachen käynnistyksessä, jossa se ilmoitti käynnistyksen yhteydessä:
 
