@@ -84,12 +84,24 @@ Samalla tarkistin että se avautuu myös selaimella:
 
 **Tehtävänanto b) Etsi lokista rivit, jotka syntyvät, kun lataat omalta palvelimeltasi yhden sivun. Analysoi rivit (eli selitä yksityiskohtaisesti jokainen kohta ja numero, etsi tarvittaessa lähteitä).**
 
-Seuraavalla komennolla tarkistin lokitiedot
+Seuraavalla komennolla sain lokitiedot
 
-    $ tail -f /var/log/apache2/access.log
+    $ sudo tail /var/log/apache2/access.log
 
   ![accesLog](https://github.com/user-attachments/assets/3b532bc4-5708-42e1-af0a-bc69327fa750)
 
+Otin tarkisteluun toisen rivin:
+
+    127.0.0.1 - - [07/Sep/2024:12:33:22 +0300] "GET / HTTP/1.1" 200 3382 "-" "Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101 Firefox/102.0"
+
+Apachen sivustolla [Log Files](https://httpd.apache.org/docs/current/logs.html) selitetään jokaisen tiedon tarkoituksen.
+
+- 127.0.0.1 on client (browser), eli asiakas tai selain joka tekee pyynnön palvelimelle (host)
+- Puuttuva tieto merkitään "-" merkillä. Tässä tapauksessa tästä puuttuu [rfc1413](https://datatracker.ietf.org/doc/html/rfc1413)
+- Seuraava puuttuva tieto on käyttäjätunnus. En ole asettanut vielä käyttäjätunnusta/palvelinohjaaja ei tarvitse käyttäjätunnusta <br>
+**Huom!**
+
+> If the status code for the request (see below) is 401, then this value should not be trusted because the user is not yet authenticated.
 
 ## Haasteet & Virheviestit
 
