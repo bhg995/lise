@@ -45,7 +45,7 @@ Käynnistys:
 
 <sub>Näyttökuva 1. CLI, Apachen käynnistys</sub>
 
-Käynnistyksessä virhe. Virheen korjaus **Haasteet & Virheviestit** -osiossa.
+Käynnistyksessä virhe. Virheen korjaus  [**Haasteet & Virheviestit**](https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#haasteet--virheviestit) -osiossa.
 
 Seuraavaksi testasin webbipalvelimen toimivuuden:
 
