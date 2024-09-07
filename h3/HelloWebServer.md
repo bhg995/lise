@@ -58,7 +58,7 @@ Ensin:
 Käytin `localhost` tarkistamisessa lyhyttä muotoa. Pidempi muoto olisi...
 
 >     $ curl http://localhost
-      $ curl -I http://localhost
+>     $ curl -I http://localhost
 
 ... tämä latasi sivuston HTML-koodin kehotteeseen
 
