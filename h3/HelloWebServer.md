@@ -11,8 +11,6 @@
 - Muisti: 4 Gt
 - Tallennustila: 32 Gt
 
-
-
 ## x) Name-based Virtual Host Support
 
 - Relies on the client (browser) to report the hostname as part of the HTTP headers
@@ -22,6 +20,8 @@
 - Eases the demand for scarce IP addressess
 
 ## Webbipalvelimen Asennus & Testi
+
+**a) Testaa, että weppipalvelimesi vastaa localhost-osoitteesta. Asenna Apache-weppipalvelin, jos se ei ole jo asennettuna.**
 
 Latasin Apache palvelinohjelman ja käynnistin seuraavilla komennoilla.
 
@@ -71,9 +71,25 @@ Käytin `localhost` tarkistamisessa lyhyttä muotoa. Pidempi muoto olisi...
 
 <sub>Näyttökuva 2. CLI, Webbipalvelin HTML</sub>
 
-Samalla tarkistin että se avautuu selaimella:
+Samalla tarkistin että se avautuu myös selaimella:
 
     $ firefox localhost
+
+![2024-09-07-153736_1920x1080_scrot](https://github.com/user-attachments/assets/a7a6f231-b694-4a12-90cd-853ac7aec103)
+
+<sub>Näyttökuva 3. Apache-palvelin Firefox selaimessa</sub>
+
+
+## Loki
+
+**Tehtävänanto b) Etsi lokista rivit, jotka syntyvät, kun lataat omalta palvelimeltasi yhden sivun. Analysoi rivit (eli selitä yksityiskohtaisesti jokainen kohta ja numero, etsi tarvittaessa lähteitä).**
+
+Seuraavalla komennolla tarkistin lokitiedot
+
+    $ tail -f /var/log/apache2/access.log
+
+    ![accesLog](https://github.com/user-attachments/assets/3b532bc4-5708-42e1-af0a-bc69327fa750)
+
 
 ## Haasteet & Virheviestit
 
@@ -101,6 +117,13 @@ Tämän jälkeen Apache käynnistyi ilman virheitä:
 <sub>Näyttökuva 3. CLI, Apachen status</sub>
 
 ## Kysymykset & Kommenttit
+
+### Sivun lataus omalta palvelimelta, Kysymys.
+
+Tehtävänanto *`b) Etsi lokista rivit, jotka syntyvät, kun lataat omalta palvelimeltasi yhden sivun. 
+Analysoi rivit (eli selitä yksityiskohtaisesti jokainen kohta ja numero, etsi tarvittaessa lähteitä).`* 
+
+
 
 Sivustoja:
 
