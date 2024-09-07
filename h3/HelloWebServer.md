@@ -90,18 +90,33 @@ Seuraavalla komennolla sain lokitiedot
 
   ![accesLog](https://github.com/user-attachments/assets/3b532bc4-5708-42e1-af0a-bc69327fa750)
 
-Otin tarkisteluun toisen rivin:
+Otin tarkisteluun toisen rivin, jossa haettiin weppispalvelimen kotisivu:
 
     127.0.0.1 - - [07/Sep/2024:12:33:22 +0300] "GET / HTTP/1.1" 200 3382 "-" "Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101 Firefox/102.0"
 
 Apachen sivustolla [Log Files](https://httpd.apache.org/docs/current/logs.html) selitetään jokaisen tiedon tarkoituksen.
 
-- 127.0.0.1 on client (browser), eli asiakas tai selain joka tekee pyynnön palvelimelle (host)
-- Puuttuva tieto merkitään "-" merkillä. Tässä tapauksessa tästä puuttuu [rfc1413](https://datatracker.ietf.org/doc/html/rfc1413)
-- Seuraava puuttuva tieto on käyttäjätunnus. En ole asettanut vielä käyttäjätunnusta/palvelinohjaaja ei tarvitse käyttäjätunnusta <br>
-**Huom!**
-
-> If the status code for the request (see below) is 401, then this value should not be trusted because the user is not yet authenticated.
+- `127.0.0.1` on client (browser), eli asiakas tai selain joka tekee pyynnön palvelimelle (host)
+- Puuttuva tieto merkitään `-` merkillä. Tässä tapauksessa tästä puuttuu [rfc1413](https://datatracker.ietf.org/doc/html/rfc1413)
+- Seuraava puuttuva tieto on `käyttäjätunnus`. En ole asettanut vielä käyttäjätunnusta/palvelinohjaaja ei tarvitse käyttäjätunnusta
+    - If the status code for the request (see below) is 401, then this value should not be trusted because the user is not yet authenticated.
+- `[07/Sep/2024:12:33:22 +0300]`, on aika milloin loki on kirjattu
+- `GET / HTTP/1.1`, on rivi jolla client pyytää tietoja. Tässä rivissä on tietoa
+    - `GET`, pyytää tiedot
+    - `/`, pyydettävä tieto. Tämä pyytää juurikansion. Pyyntö voisi olla myös esim. [/apache_pb.gif](https://httpd.apache.org/docs/current/logs.html)
+    - `HTTP/1.1`, kertoo käytetyn protokollan tiedon pyytämiseen.
+- `200`, kertoo että pyyntö on totetutettu ja tila on OK. 200 alkuiset tilakoodit merkitsevät onnistunutta pyyntöä.
+- `3382`, kertoo kuinka paljon tietoa on lähetetty palvelimelta selaimelle. 
+- Seuraava merkki `-` kertoo puuttuvasta tiedosta. Puuttuva tieto on pyydetyn tiedon sijainti (webosoite). Apachen sivuston esimerkin mukaan tämä tieto voisi olla seuraava `http://www.example.com/start.html`
+    - Tällä sivulla sijaitsee esimerkkipyynnön .gif tiedosto ([/apache_pb.gif](https://httpd.apache.org/docs/current/logs.html))
+- Viimeinen kohta `Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101 Firefox/102.0`, kertoo client (browser) järjestelmän ja käytössä olevan selaimen tieto
+    - `Mozilla/5.0` on Mozillan valtuutus, joka on yleinen melkein kaikille selaimille. [lähde](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent/Firefox)
+    - `X11; Linux aarch64; rv:102.0`, kertoo client (browser) tiedon
+        - `X11` X windows System ikkunointijärjestelmä
+        - `Linux aarch64` kertoo että käyttöjärjestelmä on Linux ja arkkitehti ARM 64-bittinen
+        - `rv:102.0` koneen versio joka renderöi webbisivut
+        - `Gecko/20100101` on [selainmoottori](https://fi.wikipedia.org/wiki/Gecko) jota käyttää Firefoxin lisäksi muita selaimia. 20100101 on moottorin versio.
+        - `Firefox/102.0` on client (browser) käytössä oleva selain. Käytetään Firefox selainta jonka versio on 102
 
 ## Haasteet & Virheviestit
 
