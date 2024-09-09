@@ -28,6 +28,8 @@
 
 **a) Testaa, että weppipalvelimesi vastaa localhost-osoitteesta. Asenna Apache-weppipalvelin, jos se ei ole jo asennettuna.**
 
+### Asentaminen
+
 Latasin Apache palvelinohjelman ja käynnistin seuraavilla komennoilla.
 
 Lataaminen:
@@ -51,6 +53,8 @@ Käynnistys:
 <sub>Näyttökuva 1. CLI, Apachen käynnistys</sub>
 
 Käynnistyksessä virhe. Virheen korjaus  [**Haasteet & Virheviestit**](https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#haasteet--virheviestit) -osiossa.
+
+### Sivuston Testaaminen
 
 Seuraavaksi testasin webbipalvelimen toimivuuden:
 
@@ -94,6 +98,8 @@ Seuraavalla komennolla sain lokitiedot
 
   ![accesLog](https://github.com/user-attachments/assets/3b532bc4-5708-42e1-af0a-bc69327fa750)
 
+<sub>Näyttökuva 5. CLI, Palvelimen lokitiedot</sub>
+
 Otin tarkisteluun toisen rivin, jossa haettiin weppispalvelimen kotisivu:
 
     127.0.0.1 - - [07/Sep/2024:12:33:22 +0300] "GET / HTTP/1.1" 200 3382 "-" "Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101 Firefox/102.0"
@@ -126,9 +132,60 @@ Apachen sivustolla [Log Files](https://httpd.apache.org/docs/current/logs.html) 
 
 **c) Etusivu uusiksi. Tee uusi name based virtual host. Sivun tulee näkyä suoraan palvelimen etusivulla http://localhost/. Sivua pitää pystyä muokkaamaan normaalina käyttäjänä, ilman sudoa. Tee uusi, laita vanhat pois päältä. Uusi sivu on hattu.example.com, ja tämän pitää näkyä: asetustiedoston nimessä, asetustiedoston ServerName-muuttujassa sekä etusivun sisällössä (esim title, h1 tai p).**
 
-Opettajan [sivuilla](https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/) Oli helppo ja selkeä ohje.
+Opettajan [sivulla](https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/) Oli helppo ja selkeä ohje.
 
-Aloitin luomalla kansion webbisivuja varten
+Aloitin luomalla kansion webbisivujen sisältöä varten:
+
+![2024-09-09-224703_1920x1080_scrot](https://github.com/user-attachments/assets/aa97d6d3-08db-4f26-85c8-32cfddf1bfc7)
+
+<sub>Näyttökuva 6. Kansion luominen webbisivuille</sub>
+
+Seuraavaksi lisäsin palvelimen asetustiedoston hakemistoon, muokkaamalla hieman komentoa opettajan sivuilta:
+
+`sudo nano /etc/apache2/sites-available/hattu.example.com.conf`
+
+Lisäsin seuraavan sisällön asetustiedostoon:
+
+    <VirtualHost *:80>
+        ServerName hattu.example.com
+        ServerAlias localhost
+        DocumentRoot /home/uhse/public_html/hattu.example.com
+
+        <Directory /home/uhse/public_html/hattu.example.com>
+            Require all granted
+        </Directory>
+    </VirtualHost>
+
+Sitten lisäsin HTML sisältöä uuteen etusivuun komennolla:
+
+    sudo nano /home/uhse/public_html/hattu.example.com/index.html
+
+Samalla kirjoitin sen vastaamaan validia HTML5-sivua. Seuraavassa tehtävässä opettaja on pyytänyt tekemään validin HTML5 sivun.
+
+![validiHTML](https://github.com/user-attachments/assets/d8dc0354-5b01-40a5-8234-e970e56920e8)
+
+<sub>Näyttökuva 7. HTML5-koodia tekstieditorissa</sub>
+
+Sen jälkeen otin sivuston käyttöön:
+
+    sudo a2ensite hattu.example.com.conf
+    sudo systemctl restart apache2
+
+Sivusto näyttää toimivan oikein:
+
+![curlTesti](https://github.com/user-attachments/assets/a113920a-e447-4fb9-9038-858352d20740)
+
+<sub>Näyttökuva 8. hattu.example.com tekstieditorissa</sub>
+
+## HTML5
+
+### e) Tee validi HTML5 sivu.
+
+HTML ja HTML5 erona on se että jälkimmäinen pystyy toistamaan audioita ja videoita. Modernit selaimet tukevat HTML5 koodia.
+
+Käytin esimerkkina opettajan [sivulla](https://terokarvinen.com/2012/short-html5-page/)) olevaa lyhyttä esimerkkiä validista HTML5 koodista.
+
+
 
 ## Haasteet & Virheviestit
 
