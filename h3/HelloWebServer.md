@@ -50,6 +50,7 @@ Käynnistys:
     $ sudo systemctl start apache2
 
 ![cli_screenshot](https://github.com/user-attachments/assets/66758ff4-95b3-447a-8567-02b5073f9e8b)
+
 <sub>Näyttökuva 1. CLI, Apachen käynnistys</sub>
 
 Käynnistyksessä virhe. Virheen korjaus  [**Haasteet & Virheviestit**](https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#haasteet--virheviestit) -osiossa.
@@ -71,6 +72,7 @@ Käytin `localhost` tarkistamisessa lyhyttä muotoa. Pidempi muoto olisi...
 ... tämä latasi sivuston HTML-koodin kehotteeseen
 
 ![curlHost](https://github.com/user-attachments/assets/37782d6d-4bff-438b-a239-7332fc081d02)
+
 <sub>Näyttökuva 2. CLI, Webbipalvelin HTML</sub>
 
 `curl -I` komento näyttää lyhyesti, että webbipalvelin toimii. Koodi `200` joka on `OK`. Perusvastaus hyväksytylle HTTP pyynnölle. Mukana myös muutakin tietoa, kuten sisällön muoto, viimeksi muokattu jne.
@@ -142,7 +144,7 @@ Aloitin luomalla kansion webbisivujen sisältöä varten:
 
 Seuraavaksi lisäsin palvelimen asetustiedoston hakemistoon, muokkaamalla hieman komentoa opettajan sivuilta:
 
-`sudo nano /etc/apache2/sites-available/hattu.example.com.conf`
+    $ sudo nano /etc/apache2/sites-available/hattu.example.com.conf
 
 Lisäsin seuraavan sisällön asetustiedostoon:
 
@@ -158,7 +160,7 @@ Lisäsin seuraavan sisällön asetustiedostoon:
 
 Sitten lisäsin HTML sisältöä uuteen etusivuun komennolla:
 
-    sudo nano /home/uhse/public_html/hattu.example.com/index.html
+    $ sudo nano /home/uhse/public_html/hattu.example.com/index.html
 
 Samalla kirjoitin sen vastaamaan validia HTML5-sivua. Seuraavassa tehtävässä opettaja on pyytänyt tekemään validin HTML5 sivun.
 
@@ -179,13 +181,27 @@ Sivusto näyttää toimivan oikein:
 
 ## HTML5
 
-### e) Tee validi HTML5 sivu.
+**e) Tee validi HTML5 sivu.**
 
 HTML ja HTML5 erona on se että jälkimmäinen pystyy toistamaan audioita ja videoita. Modernit selaimet tukevat HTML5 koodia.
 
 Käytin esimerkkina opettajan [sivulla](https://terokarvinen.com/2012/short-html5-page/)) olevaa lyhyttä esimerkkiä validista HTML5 koodista.
 
+Kävin vielä tarkastamassa osoitteesta https://validator.w3.org/ että sivu on HTML5 validi:
 
+![validator](https://github.com/user-attachments/assets/bbddbffc-699c-41c4-8145-f8677d040515)
+
+<sub>Näyttökuva 9. HTML checker at validator.w3.org</sub>
+
+## curl & curl -I
+
+**f) Anna esimerkit 'curl -I' ja 'curl' -komennoista. Selitä 'curl -I' muutamasta näyttämästä otsakkeesta (response header), mitä ne tarkoittavat.**
+
+`curl -I [sivu]` komento näyttää lyhyesti, että webbipalvelin toimii. Koodi `200`, joka on `OK`, eli Perusvastaus hyväksytylle HTTP pyynnölle. Mukana myös muutakin tietoa, kuten sisällön muoto, viimeksi muokattu jne.
+
+`curl [sivu]` komento tulostaa sivuston komentokehotteeseen HTML muodossa.
+
+Käytin itse komentoa kun testasin [sivustoa]((https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#sivuston-testaaminen)
 
 ## Haasteet & Virheviestit
 
