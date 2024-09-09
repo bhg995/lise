@@ -48,7 +48,6 @@ Käynnistys:
     $ sudo systemctl start apache2
 
 ![cli_screenshot](https://github.com/user-attachments/assets/66758ff4-95b3-447a-8567-02b5073f9e8b)
-
 <sub>Näyttökuva 1. CLI, Apachen käynnistys</sub>
 
 Käynnistyksessä virhe. Virheen korjaus  [**Haasteet & Virheviestit**](https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#haasteet--virheviestit) -osiossa.
@@ -68,13 +67,11 @@ Käytin `localhost` tarkistamisessa lyhyttä muotoa. Pidempi muoto olisi...
 ... tämä latasi sivuston HTML-koodin kehotteeseen
 
 ![curlHost](https://github.com/user-attachments/assets/37782d6d-4bff-438b-a239-7332fc081d02)
-
 <sub>Näyttökuva 2. CLI, Webbipalvelin HTML</sub>
 
 `curl -I` komento näyttää lyhyesti, että webbipalvelin toimii. Koodi `200` joka on `OK`. Perusvastaus hyväksytylle HTTP pyynnölle. Mukana myös muutakin tietoa, kuten sisällön muoto, viimeksi muokattu jne.
 
 ![curl_I_HOST](https://github.com/user-attachments/assets/fa2688dd-82f3-4f9b-a05f-ffd1f3d9f5f5)
-
 
 <sub>Näyttökuva 3. CLI, HTTP Response Header</sub>
 
@@ -125,6 +122,14 @@ Apachen sivustolla [Log Files](https://httpd.apache.org/docs/current/logs.html) 
         - `Gecko/20100101` on [selainmoottori](https://fi.wikipedia.org/wiki/Gecko) jota käyttää Firefoxin lisäksi muita selaimia. 20100101 on moottorin versio.
         - `Firefox/102.0` on client (browser) käytössä oleva selain. Käytetään Firefox selainta jonka versio on 102
 
+## Uusi etusivu
+
+**c) Etusivu uusiksi. Tee uusi name based virtual host. Sivun tulee näkyä suoraan palvelimen etusivulla http://localhost/. Sivua pitää pystyä muokkaamaan normaalina käyttäjänä, ilman sudoa. Tee uusi, laita vanhat pois päältä. Uusi sivu on hattu.example.com, ja tämän pitää näkyä: asetustiedoston nimessä, asetustiedoston ServerName-muuttujassa sekä etusivun sisällössä (esim title, h1 tai p).**
+
+Opettajan [sivuilla](https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/) Oli helppo ja selkeä ohje.
+
+Aloitin luomalla kansion webbisivuja varten
+
 ## Haasteet & Virheviestit
 
 ### Could not reliably determine the server's fully qualified domain name, AH00558
@@ -150,13 +155,11 @@ Tämän jälkeen Apache käynnistyi ilman virheitä:
 
 <sub>Näyttökuva 3. CLI, Apachen status</sub>
 
-## Kysymykset & Kommenttit
+## Kysymykset & Kommentit
 
 ### Sivun lataus omalta palvelimelta, Kysymys.
 
-Tehtävänanto *`b) Etsi lokista rivit, jotka syntyvät, kun lataat omalta palvelimeltasi yhden sivun. 
-Analysoi rivit (eli selitä yksityiskohtaisesti jokainen kohta ja numero, etsi tarvittaessa lähteitä).`* 
-
+Mitä eroa kansioilla `/var/www/html/index.html` ja ``
 
 
 Sivustoja:
