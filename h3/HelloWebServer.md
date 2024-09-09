@@ -69,12 +69,14 @@ Käytin `localhost` tarkistamisessa lyhyttä muotoa. Pidempi muoto olisi...
 
 ![curlHost](https://github.com/user-attachments/assets/37782d6d-4bff-438b-a239-7332fc081d02)
 
+<sub>Näyttökuva 2. CLI, Webbipalvelin HTML</sub>
+
 `curl -I` komento näyttää lyhyesti, että webbipalvelin toimii. Koodi `200` joka on `OK`. Perusvastaus hyväksytylle HTTP pyynnölle. Mukana myös muutakin tietoa, kuten sisällön muoto, viimeksi muokattu jne.
 
 ![curl_I_HOST](https://github.com/user-attachments/assets/fa2688dd-82f3-4f9b-a05f-ffd1f3d9f5f5)
 
 
-<sub>Näyttökuva 2. CLI, Webbipalvelin HTML</sub>
+<sub>Näyttökuva 3. CLI, HTTP Response Header</sub>
 
 Samalla tarkistin että se avautuu myös selaimella:
 
@@ -82,7 +84,7 @@ Samalla tarkistin että se avautuu myös selaimella:
 
 ![2024-09-07-153736_1920x1080_scrot](https://github.com/user-attachments/assets/a7a6f231-b694-4a12-90cd-853ac7aec103)
 
-<sub>Näyttökuva 3. Apache-palvelin Firefox selaimessa</sub>
+<sub>Näyttökuva 4. Apachen palvelimen oletussivu Firefox selaimessa</sub>
 
 
 ## Loki
