@@ -170,8 +170,8 @@ Samalla kirjoitin sen vastaamaan validia HTML5-sivua. Seuraavassa tehtävässä 
 
 Sen jälkeen otin sivuston käyttöön:
 
-    sudo a2ensite hattu.example.com.conf
-    sudo systemctl restart apache2
+    $ sudo a2ensite hattu.example.com.conf
+    $ sudo systemctl restart apache2
 
 Sivusto näyttää toimivan oikein:
 
@@ -201,7 +201,98 @@ Kävin vielä tarkastamassa osoitteesta https://validator.w3.org/ että sivu on 
 
 `curl [sivu]` komento tulostaa sivuston komentokehotteeseen HTML muodossa.
 
-Käytin itse komentoa kun testasin [sivustoa]((https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#sivuston-testaaminen)
+Käytin itse komentoa kun testasin [sivustoa](https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#sivuston-testaaminen)
+
+## Useampi sivu eri nimillä
+
+**o) Vapaaehtoinen, vaikea: Laita sama tietokone vastaamaan kahdellla eri sivulla kahdesta eri nimestä. Eli kaksi weppisiteä samalla koneelle, esim. foo.example.com ja bar.example.com. Voit simuloida nimipalvelun toimintaa hosts-tiedoston avulla.**
+
+Aloitin tekemällä 2 kansiota kahdelle sivulle, foo.example.com ja bar.example.com
+
+    $ mkdir -p /home/uhse/public_html/foo.example.com
+    $ mkdir -p /home/uhse/public_html/bar.example.com
+
+![dir4sites](https://github.com/user-attachments/assets/615deff6-c992-46f4-b994-15fc315824e3)
+
+<sub>Näyttökuva 10. Kansioiden luonti</sub>
+
+Sen jälkeen kirjoitin nanoeditorilla sisältöä sivuihin HTML muodossa.
+
+    $ nano /home/uhse/public_html/foo.example.com/index.html
+    $ nano /home/uhse/public_html/bar.example.com/index.html
+
+Sitten virtuaalipalvelimen asetukset:
+
+    $ sudo nano /etc/apache2/sites-available/foo.example.com.conf
+    $ sudo nano /etc/apache2/sites-available/bar.example.com.conf
+
+Lisään samassa järjestyksessä sisällöt foo ja bar sivustoille:
+
+Foo.example.com
+
+    <VirtualHost *:80>
+        ServerName foo.example.com
+        ServerAlias www.foo.example.com
+        DocumentRoot /home/uhse/public_html/foo.example.com
+
+        <Directory /home/uhse/public_html/foo.example.com>
+            Require all granted
+        </Directory>
+    </VirtualHost>
+
+bar.example.com
+
+    <VirtualHost *:80>
+        ServerName bar.example.com
+        ServerAlias www.bar.example.com
+        DocumentRoot /home/uhse/public_html/bar.example.com
+
+        <Directory /home/uhse/public_html/bar.example.com>
+            Require all granted
+        </Directory>
+    </VirtualHost>
+
+Tämän jälkeen otin sivustot käyttöön komennoilla:
+
+    $ sudo a2ensite foo.example.com.conf
+    $ sudo a2ensite bar.example.com.conf
+
+Käynnistin palvelimen uudelleen:
+
+    $ sudo systemctl restart apache2
+
+![cur4sites](https://github.com/user-attachments/assets/fd4e0844-2e0f-459c-852b-23cea739bee0)
+
+<sub>Näyttökuva 11. Sivustojen tarkistus curl komennolla</sub>
+
+Tämä näytti toistaiseksi olevan OK. Jotta voisin simuloida nimipalvelua, lisäsin nämä sivustot `hosts` tiedostoon. Avasin tiedoston komennolla:
+
+    sudo nano /etc/hosts
+
+ja lisäsin loppuun rivit:
+
+    127.0.0.1   foo.example.com
+    127.0.0.1   bar.example.com
+
+![hosts](https://github.com/user-attachments/assets/2542978e-3543-4630-9bf9-ecdf8af84597)
+
+<sub>Näyttökuva 12. Nanoeditori</sub>
+
+Tarkistin vielä palvelimen komennolla:
+
+    sudo apache2ctl -S
+
+Komentokehotteessa tuli näkyviin foo ja bar sivustot, sekä aikaisempi esimerkki `hattu.example.com` jonka alias on localhost oli myös näkyvissä.
+
+![checkingapache](https://github.com/user-attachments/assets/9f627e1c-ebe3-4e57-affd-d96d8e985f48)
+
+<sub>Näyttökuva 13. Sivustot palvelimella</sub>
+
+Unohdin poistaa Apachen oletussivuston alussa, joten poistin jälkikäteen komennolla, jonka jälkeen päivitin Apachen:
+
+    sudo a2dissite 000-default.conf
+
+Tällä kertaa `curl localhost` tulostaa Apachen oletussivuston sijaan hattu.example.com sivuston, kuten opettaja pyysi.
 
 ## Haasteet & Virheviestit
 
