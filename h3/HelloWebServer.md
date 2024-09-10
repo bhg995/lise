@@ -22,7 +22,7 @@
 - `+` Eases the demand for scarce IP addressess
 - `+` Efficient to use and simple to manage
 - `-` Host requires a HTTP header
-- `+` or `-` Works only on modern websites
+- `+` / `-` Works only on modern websites
 
 In example foo.example.com and bar.example.com can be hosted on a single ip address
 
@@ -121,7 +121,7 @@ Otin tarkisteluun toisen rivin, jossa haettiin weppispalvelimen kotisivu:
 
     127.0.0.1 - - [07/Sep/2024:12:33:22 +0300] "GET / HTTP/1.1" 200 3382 "-" "Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101 Firefox/102.0"
 
-Apachen sivustolla [Log Files](https://httpd.apache.org/docs/current/logs.html) selitetään jokaisen tiedon tarkoituksen.
+Apachen sivustolla [Log Files](https://httpd.apache.org/docs/current/logs.html) selitetään jokaisen tiedon tarkoitus.
 
 - `127.0.0.1` on client (browser), eli asiakas tai selain joka tekee pyynnön palvelimelle (host)
 - Puuttuva tieto merkitään `-` merkillä. Tässä tapauksessa tästä puuttuu [rfc1413](https://datatracker.ietf.org/doc/html/rfc1413)
@@ -179,7 +179,7 @@ Sitten lisäsin HTML sisältöä uuteen etusivuun komennolla:
 
     $ sudo nano /home/uhse/public_html/hattu.example.com/index.html
 
-Samalla kirjoitin sen vastaamaan validia HTML5-sivua. Seuraavassa tehtävässä opettaja on pyytänyt tekemään validin HTML5 sivun.
+Samalla kirjoitin sen vastaamaan validia HTML5-sivua. Seuraavassa tehtävässä opettaja oli pyytänyt tekemään validin HTML5 sivun.
 
 ![validiHTML](https://github.com/user-attachments/assets/d8dc0354-5b01-40a5-8234-e970e56920e8)
 
@@ -190,7 +190,7 @@ Sen jälkeen otin sivuston käyttöön:
     $ sudo a2ensite hattu.example.com.conf
     $ sudo systemctl restart apache2
 
-Sivusto näyttää toimivan oikein:
+Sivusto näytti toimivan oikein:
 
 ![curlTesti](https://github.com/user-attachments/assets/a113920a-e447-4fb9-9038-858352d20740)
 
@@ -218,11 +218,11 @@ Lähde: [Short HTML5 page](https://terokarvinen.com/2012/short-html5-page/). Jul
 
 **f) Anna esimerkit 'curl -I' ja 'curl' -komennoista. Selitä 'curl -I' muutamasta näyttämästä otsakkeesta (response header), mitä ne tarkoittavat.**
 
-`curl -I [sivu]` komento näyttää lyhyesti, että webbipalvelin toimii. Koodi `200`, joka on `OK`, eli Perusvastaus hyväksytylle HTTP pyynnölle. Mukana myös muutakin tietoa, kuten sisällön muoto, viimeksi muokattu jne.
+`curl -I [sivu]` komento näyttää Otsakkeen (Response header), ja että webbipalvelin toimii. Koodi `200`, joka on `OK`, eli Perusvastaus hyväksytylle HTTP pyynnölle. Mukana myös muutakin tietoa, kuten sisällön muoto, viimeksi muokattu jne.
 
 `curl [sivu]` komento tulostaa sivuston komentokehotteeseen HTML muodossa.
 
-Käytin itse komentoa kun testasin [sivustoa](https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#sivuston-testaaminen)
+Käytin itse komentoa kun testasin [sivustoa](https://github.com/bhg995/lise/blob/main/h3/HelloWebServer.md#sivuston-testaaminen), tuloste kummastakin komennosta näyttökuva.
 
 ## Useampi sivu eri nimillä
 
