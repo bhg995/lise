@@ -35,7 +35,7 @@ In example foo.example.com and bar.example.com can be hosted on a single ip addr
 - `-` Requires more IP addresses
 - `-` Less scalable
 
-In example foo.example.com is hosted on IP address 192.168.1.1, and bar.example.com is hosted on IP address 192.168.1.2
+In example foo.example.com is hosted on IP address 192.168.1.1, and bar.example.com is hosted on IP address 192.168.1.2 []
 
 ## Webbipalvelimen Asennus & Testi
 
@@ -339,7 +339,7 @@ Tämän jälkeen Apache käynnistyi ilman virheitä:
 Mitä eroa kansioilla `/var/www/html/index.html` ja ``
 
 
-Sivustoja:
+## Lähteet:
 
 https://www.2kmediat.com/apache/apache_konfiguraatio12.asp
 
