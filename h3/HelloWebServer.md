@@ -35,7 +35,9 @@ In example foo.example.com and bar.example.com can be hosted on a single ip addr
 - `-` Requires more IP addresses
 - `-` Less scalable
 
-In example foo.example.com is hosted on IP address 192.168.1.1, and bar.example.com is hosted on IP address 192.168.1.2 []
+In example foo.example.com is hosted on IP address 192.168.1.1, and bar.example.com is hosted on IP address 192.168.1.2 
+
+Lähde: [Name-based Virtual Host Support](https://httpd.apache.org/docs/2.4/vhosts/name-based.html). Luettu 4.9.2024
 
 ## Webbipalvelimen Asennus & Testi
 
@@ -142,6 +144,8 @@ Apachen sivustolla [Log Files](https://httpd.apache.org/docs/current/logs.html) 
         - `rv:102.0` koneen versio joka renderöi webbisivut
         - `Gecko/20100101` on [selainmoottori](https://fi.wikipedia.org/wiki/Gecko) jota käyttää Firefoxin lisäksi muita selaimia. 20100101 on moottorin versio.
         - `Firefox/102.0` on client (browser) käytössä oleva selain. Käytetään Firefox selainta jonka versio on 102
+     
+Lähde: [Log Files](https://httpd.apache.org/docs/current/logs.html). Luettu 4.9.2024
 
 ## Uusi etusivu
 
@@ -192,19 +196,23 @@ Sivusto näyttää toimivan oikein:
 
 <sub>Näyttökuva 8. hattu.example.com tekstieditorissa</sub>
 
+Lähde: [Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address](https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Julkaistu 10.4.2018 by Tero Karvinen. Luettu 4.9.2024
+
 ## HTML5
 
 **e) Tee validi HTML5 sivu.**
 
 HTML ja HTML5 erona on se että jälkimmäinen pystyy toistamaan audioita ja videoita. Modernit selaimet tukevat HTML5 koodia.
 
-Käytin esimerkkina opettajan [sivulla](https://terokarvinen.com/2012/short-html5-page/)) olevaa lyhyttä esimerkkiä validista HTML5 koodista.
+Käytin esimerkkina opettajan [sivulla](https://terokarvinen.com/2012/short-html5-page/) olevaa lyhyttä esimerkkiä validista HTML5 koodista.
 
 Kävin vielä tarkastamassa osoitteesta https://validator.w3.org/ että sivu on HTML5 validi:
 
 ![validator](https://github.com/user-attachments/assets/bbddbffc-699c-41c4-8145-f8677d040515)
 
 <sub>Näyttökuva 9. HTML checker at validator.w3.org</sub>
+
+Lähde: [Short HTML5 page](https://terokarvinen.com/2012/short-html5-page/). Julkaistu 12.2.2012 by Tero Karvinen. Luettu 5.9.2024.
 
 ## curl & curl -I
 
@@ -239,7 +247,7 @@ Sitten virtuaalipalvelimen asetukset:
     $ sudo nano /etc/apache2/sites-available/foo.example.com.conf
     $ sudo nano /etc/apache2/sites-available/bar.example.com.conf
 
-Lisään samassa järjestyksessä sisällöt foo ja bar sivustoille:
+Lisään seuraavassa järjestyksessä sisällöt foo ja bar sivustoille:
 
 Foo.example.com
 
@@ -307,7 +315,7 @@ Unohdin poistaa Apachen oletussivuston alussa, joten poistin jälkikäteen komen
 
 Tällä kertaa `curl localhost` tulostaa Apachen oletussivuston sijaan hattu.example.com sivuston, kuten opettaja pyysi.
 
-## Haasteet & Virheviestit
+## Haasteet / Virheviestit
 
 ### Could not reliably determine the server's fully qualified domain name, AH00558
 
@@ -332,14 +340,11 @@ Tämän jälkeen Apache käynnistyi ilman virheitä:
 
 <sub>Näyttökuva 3. CLI, Apachen status</sub>
 
+Lähde: [DigitalOcean](https://www.digitalocean.com/community/tutorials/apache-configuration-error-ah00558-could-not-reliably-determine-the-server-s-fully-qualified-domain-name). Luettu 6.9.2024
+
 ## Kysymykset & Kommentit
 
-### Sivun lataus omalta palvelimelta, Kysymys.
-
-Mitä eroa kansioilla `/var/www/html/index.html` ja ``
-
-
-## Lähteet:
+## Sivustoja
 
 https://www.2kmediat.com/apache/apache_konfiguraatio12.asp
 
