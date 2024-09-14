@@ -24,7 +24,7 @@
 > $ sudo apt-get install apache2
 > 
 > $ sudo systemctl status apache2
-> 
+>  
 > $ sudo a2enmod userdir
 > 
 > $ sudo service apache2 restart
