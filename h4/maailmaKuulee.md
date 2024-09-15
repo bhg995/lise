@@ -1,6 +1,10 @@
 
 # VPS & Webserver. 15.9 klo 18:30
 
+Tämä Github dokumentin kirjoitus alkoi klo 18:30. Tehtävää varten on tehty valmistelut heti viikkoluennon jälkeen, jotkut kohdat ovat tehty aikaisemmin ja lisätty tähän kirjoitusvaiheessa.
+
+Varsinainen tehtävä eli b) Tee alkutoimet omalla virtuaalipalvelimellasi & c) Asenna weppipalvelin omalle virtuaalipalvelimellesi on aloitettu klo 18:50 ja lopettettu 20:13 onnistuneesti. [llanga.live](llanga.live)
+
 ## Laitteisto
 
 - **Näyttö: AOC G2490VXA, 24" QHD(1440p), 144Hz**
@@ -11,15 +15,41 @@
 - Muisti: 4 Gt
 - Tallennustila: 32 Gt
 
-  ### a) Vuokraa oma virtuaalipalvelin haluamaltasi palveluntarjoajalta.
+### x) Lue ja tiivistä
 
-  Valitsin DigitalOceanin palvelimen palvelutarjoajaksi. Tero Karvinen ehdottaa sen käyttämistä kurssilla, olen nähnyt sen myös käytössä, ja uskon että osaan käyttää tai opin ainakin nopeasti oppimaan.
+- Tavoitteena oli vuokrata virtuaalipalvelin, ja asentaa webbipalvelin virtuaalipalvelimelle.
+- Susanna oli hyödyntänyt Github Education pakettia joka on suunnattu ohjelmistokehityksen opiskelijoille.
+- Datakeskuksen sijainniksi hän valitsi Amsterdam, perustellen sen lähellä. Myös GDPR oli otettu huomioon.
+- Autentikointimenetelmäksi Susanna valitsi vahvan salasanan, SSH-avain olisi ollut hänen mukaan parempia.
+- Yhteys palvelimeen oli muodostettu ssh menetelmällä
+- Susanna lisäsi uuden käyttäjän virtuaalipalvelimelle, samalla suojasi sen salasanalla
+- `$ sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade`
+  
+### a) Vuokraa oma virtuaalipalvelin haluamaltasi palveluntarjoajalta.
 
-  Valitsin domainnimen tarjoajaksi Namecheapiä. Tämä oli helppo valinta, opettaja on ehdottanut sen käyttöä ja se on varsin edullinen.
+Valitsin DigitalOceanin palvelimen palvelutarjoajaksi. Tero Karvinen ehdottaa sen käyttämistä kurssilla, olen nähnyt sen myös käytössä, ja uskoin että osaisin käyttää tai oppisin ainakin nopeasti.
 
-### b) Tee alkutoimet omalla virtuaalipalvelimellasi.
+![configs](https://github.com/user-attachments/assets/86266c34-c108-414a-9c6b-4e05278f52c0)
 
-Aloitin tämän osion tekemisen klo 18:50
+
+Virtuaalikone pitää ja kannattaa aina olla mahdollisimman lähellä käyttäjiä. Tätä tehtävää varten ei tämä ollut tärkeä, mutta valitsin kuitenkin Amsterdamin, joka sijaitsee Euroopassa sekä kuuluu GDPR:n piiriin.
+
+![creatingDroplet](https://github.com/user-attachments/assets/9349c848-e6aa-434e-98de-d5bfda26d9fb)
+
+Tämän jälkeen virtuaalipalvelimeni, jonka nimesin valdelmaksi, oli valmis ja sain ip osoitteen nimipalvelua varten.
+
+![dropletti](https://github.com/user-attachments/assets/1bdf15c5-a92a-4b3f-8be3-fdcb2678c46f)
+
+Valitsin domainnimen tarjoajaksi Namecheapiä. Tämä oli helppo valinta, opettaja on ehdottanut sen käyttöä ja se on varsin edullinen.
+
+Ostaessani domainnimeä, olin niin innoissani tehtävästä että unohdin dokumentoida Namecheapin prosessin. Sain kuitenkin näyttökuvan sähköpostin vahvistuksesta ja tilauksestani.
+
+![namecheapSuccess](https://github.com/user-attachments/assets/7788426f-df9b-4fbd-9985-46826bdd94d4)
+
+![2024-09-15-221314_930x402_scrot](https://github.com/user-attachments/assets/1d173375-a750-4f86-ab37-50a299ec9f44)
+
+### b) Tee alkutoimet omalla virtuaalipalvelimellasi. klo 18:50
+
 
 Aloitin ottamalla yhteyttä palvelimeen
 
@@ -80,6 +110,8 @@ Ei ollut virhe, mutta korjasin sen
 ![apacheSTATUskorjattu2024-09-15-191547_759x254_scrot](https://github.com/user-attachments/assets/ab7e6244-e2a5-421c-ad1d-3a1f4aeb1408)
 
 <sub>Näyttökuva 5. Apache status enabled<sub>
+
+### e) Kotisivut palvelimelle
 
 Tämän jälkeen toisen reijän palomuuriin
 
@@ -207,14 +239,18 @@ ChatGPT mukaan chmod o+x /home/leonardo näytti olevan tiukempi sallimaan oikeuk
 
 Käynnistin apachen uudelleen, sen jälkeen kun olin syöttänyt ChatGPT:n ehdottamaa komentoa korjaamaan `Error 403`
 
-Kokeilin uudestaan curl komentoa
-
-![apacheOLETUSTOIMII2024-09-15-191834_655x222_scrot](https://github.com/user-attachments/assets/d36bfa8a-fae4-48f3-b4d6-5f1c8dede386)
-
-<sub>Näyttökuva 8. HTTP Otsake. 200<sub>
+Kokeilin uudestaan curl komentoa ja sain koodin 200!
 
 Tarkistin että sivu toimii myös selaimen kautta
 
 ![kotisivut2024-09-15-214418_1000x727_scrot](https://github.com/user-attachments/assets/80a581da-44f6-4d62-8993-1195c8385283)
 
 <sub>Näyttökuva 9. Toimiva kotisivu<sub>
+
+Klo 20:13 olin valmis ja sivu pyörii
+
+
+## Lähteet
+- https://terokarvinen.com/linux-palvelimet/
+- https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/
+- https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu#step-5-allowing-other-connections
