@@ -3,7 +3,7 @@
 
 Tämä Github dokumentin kirjoitus alkoi klo 18:30. Tehtävää varten on tehty valmistelut heti viikkoluennon jälkeen, jotkut kohdat ovat tehty aikaisemmin ja lisätty tähän kirjoitusvaiheessa.
 
-Varsinainen tehtävä eli b) Tee alkutoimet omalla virtuaalipalvelimellasi & c) Asenna weppipalvelin omalle virtuaalipalvelimellesi on aloitettu klo 18:50 ja lopettettu 20:13 onnistuneesti. [llanga.live](www.llanga.live)
+Varsinainen tehtävä eli b) Tee alkutoimet omalla virtuaalipalvelimellasi & c) Asenna weppipalvelin omalle virtuaalipalvelimellesi on aloitettu klo 18:50 ja lopettettu 20:13 onnistuneesti. www.llanga.live
 
 ## Laitteisto
 
