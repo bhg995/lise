@@ -145,33 +145,34 @@ Syötin virheviestin `(13)Permission denied: [client 185.191.126.213:56244] AH00
         to / denied (filesystem path '/home/leonardo/public_html') because 
         search permissions are missing on a component of the path` ChatGPT:n, ja vastaus oli
 
-The error message you shared provides a clear indication that the 403 Forbidden error is related to file system permissions. Specifically, Apache is trying to access /home/leonardo/public_html, but it is encountering a Permission Denied error due to missing search permissions on one of the directories in the path.
-Key Details in the Error:
-
-    Permission Denied (Error 13): This means Apache doesn't have permission to access one of the directories in the path leading to /home/leonardo/public_html.
-    Search Permissions: The search (or execute) permission (x on directories) allows Apache to "search" through directories to locate files.
-
-Likely Causes:
-
-    Permissions Issue on Parent Directories: One or more directories in the path (/home, /home/leonardo, or /home/leonardo/public_html) are missing the necessary execute (x) permissions for the web server user (typically www-data on Debian-based systems).
-    Directory Ownership: The directory may not be owned by the correct user, preventing Apache from traversing it.
-
-Solution:
-
-To fix this, you need to ensure that Apache has the necessary permissions on the directory path:
-Step 1: Check Permissions on the Path Components
-
-Run the following command to check the permissions on each directory in the path:
-
-        $ ls -ld /home /home/leonardo /home/leonardo/public_html
-
-This will show the current permissions for each directory in the path.
-Step 2: Grant Execute Permissions on Parent Directories
-
-If the directories `/home` or `/home/leonardo` are missing the `x` (execute) permission, you need to add it:
-
-        $ chmod o+x /home
-        $ chmod o+x /home/leonardo
+> The error message you shared provides a clear indication that the 403 Forbidden error is related to file system permissions. Specifically, Apache is trying to access /home/leonardo/public_html, but it is encountering a Permission Denied error due to missing search permissions on one of the directories in the path.
+>
+> Key Details in the Error:
+>
+>     Permission Denied (Error 13): This means Apache doesn't have permission to access one of the directories in the path leading to /home/leonardo/public_html.
+>     Search Permissions: The search (or execute) permission (x on directories) allows Apache to "search" through directories to locate files.
+>
+> Likely Causes:
+>
+>     Permissions Issue on Parent Directories: One or more directories in the path (/home, /home/leonardo, or /home/leonardo/public_html) are missing the necessary execute (x) permissions for the web server user (typically www-data on Debian-based systems).
+>     Directory Ownership: The directory may not be owned by the correct user, preventing Apache from traversing it.
+>
+> Solution:
+>
+> To fix this, you need to ensure that Apache has the necessary permissions on the directory path:
+> Step 1: Check Permissions on the Path Components
+>
+> Run the following command to check the permissions on each directory in the path:
+>
+>        $ ls -ld /home /home/leonardo /home/leonardo/public_html
+>
+> This will show the current permissions for each directory in the path.
+> Step 2: Grant Execute Permissions on Parent Directories
+>
+> If the directories `/home` or `/home/leonardo` are missing the `x` (execute) permission, you need to add it:
+> 
+>        $ chmod o+x /home
+>        $ chmod o+x /home/leonardo
 
 Olen tottunut näkemään luku/kirjoitus/execute liittyvissä komennoissa komennon joten kysyin ChatGPT:ltä
 
@@ -202,7 +203,18 @@ ChatGPT:
 > 
 > Both permissions are important: 755 on public_html allows Apache to read files there, and o+x on /home/leonardo lets Apache traverse through /home/leonardo to get to public_html.
 
+ChatGPT mukaan chmod o+x /home/leonardo näytti olevan tiukempi sallimaan oikeuksia, ja käytin sitä virheen korjauksessta.
 
+Käynnistin apachen uudelleen, sen jälkeen kun olin syöttänyt ChatGPT:n ehdottamaa komentoa korjaamaan `Error 403`
 
+Kokeilin uudestaan curl komentoa
 
-Näin on uusi 
+![apacheOLETUSTOIMII2024-09-15-191834_655x222_scrot](https://github.com/user-attachments/assets/d36bfa8a-fae4-48f3-b4d6-5f1c8dede386)
+
+<sub>Näyttökuva 8. HTTP Otsake. 200<sub>
+
+Tarkistin että sivu toimii myös selaimen kautta
+
+![kotisivut2024-09-15-214418_1000x727_scrot](https://github.com/user-attachments/assets/80a581da-44f6-4d62-8993-1195c8385283)
+
+<sub>Näyttökuva 9. Toimiva kotisivu<sub>
