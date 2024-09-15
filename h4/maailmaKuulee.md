@@ -1,5 +1,5 @@
 
-# VPS & Webserver
+# VPS & Webserver. 15.9 klo 18:30
 
 ## Laitteisto
 
@@ -11,8 +11,198 @@
 - Muisti: 4 Gt
 - Tallennustila: 32 Gt
 
-  ### Vuokraa oma virtuaalipalvelin haluamaltasi palveluntarjoajalta.
+  ### a) Vuokraa oma virtuaalipalvelin haluamaltasi palveluntarjoajalta.
 
   Valitsin DigitalOceanin palvelimen palvelutarjoajaksi. Tero Karvinen ehdottaa sen käyttämistä kurssilla, olen nähnyt sen myös käytössä, ja uskon että osaan käyttää tai opin ainakin nopeasti oppimaan.
 
   Valitsin domainnimen tarjoajaksi Namecheapiä. Tämä oli helppo valinta, opettaja on ehdottanut sen käyttöä ja se on varsin edullinen.
+
+### b) Tee alkutoimet omalla virtuaalipalvelimellasi.
+
+Aloitin tämän osion tekemisen klo 18:50
+
+Aloitin ottamalla yhteyttä palvelimeen
+
+    $ ssh root@157.245.78.37
+
+![2024-09-15-185407_655x254_scrot](https://github.com/user-attachments/assets/cb2c22b6-df15-4151-b7d4-55694e18aa84)
+
+<sub>Näyttökuva 1. Kirjautuminen palvelimeen<sub>
+
+Ensin hain päivitykset 
+
+        $ sudo apt-get update && sudo apt-get upgrade
+
+Jonka jälkeen asensin palomuurin, avasin ensimmäisen portin ja kytkin palomuurin päälle
+
+        $ sudo apt-get install ufw
+        $ sudo ufw allow 22/tcp
+        $ sudo ufw enable
+
+![reikaPalomuuriin2024-09-15-190004_639x318_scrot](https://github.com/user-attachments/assets/bdb064e0-a129-4462-8df3-cb854aa803e4)
+
+<sub>Näyttökuva 2. Palomuuri<sub>
+
+Lisäsinn uuden käyttäjän jolle loin vahvan salasanan, tein myös käyttäjästä sudoerin (sudo-oikeudet)
+
+        $ sudo adduser leonardo 
+        $ sudo adduser leonardo sudo
+
+![uusiKaytt2024-09-15-190403_639x622_scrot](https://github.com/user-attachments/assets/7296ca30-1803-458f-97ee-74133046478e)
+
+<sub>Näyttökuva 3. Uusi käyttäjä<sub>
+
+Sen jälkeen oli mahdollista kirjautua uudella käyttäjällä ja lukita juurikäyttäjä (root):
+
+        $ ssh leonardo@157.245.78.37
+        $ sudo usermod -lock root
+
+Sitten laitoin päivitykset kuntoon kerralla
+
+        $ sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
+
+Asensin Apachen virtuaalipalvelimelle ja tarkistin toimivuuden
+
+        $ sudo apt-get install apache2
+        $ sudo systemctl start apache2
+        $ sudo systemctl status apache2
+
+Kaikki näytti hyvältä, paitsi apache2.service näytti olevan disabled
+
+![apacheSTATUS2024-09-15-191500_759x446_scrot](https://github.com/user-attachments/assets/8df61103-583a-48c0-9381-6cc570e0f551)
+
+<sub>Näyttökuva 4. Apache status<sub>
+        
+Ei ollut virhe, mutta korjasin sen
+
+        $ sudo systemctl enable apache2
+    
+![apacheSTATUskorjattu2024-09-15-191547_759x254_scrot](https://github.com/user-attachments/assets/ab7e6244-e2a5-421c-ad1d-3a1f4aeb1408)
+
+<sub>Näyttökuva 5. Apache status enabled<sub>
+
+Tämän jälkeen toisen reijän palomuuriin
+
+        $ sudo ufw allow 80/tcp
+
+Korvasin Apache palvelimen oletussivut:
+
+        $ echo HEI MAAILMA! KUULUUKO?|sudo tee /var/www/index.html
+
+![OletussivuVaihdettu2024-09-15-192234_655x110_scrot](https://github.com/user-attachments/assets/1f148dc2-f767-48cc-ab61-b67b0657e6ef)
+
+<sub>Näyttökuva 6. Palvelimen uusi sivunäkymä<sub>
+
+Otin `userdir`n käyttöön ja käynnistin palvelimen uudestaan
+
+        $ sudo a2enmod userdir
+        $ sudo systemctl restart apache2
+
+Asensin micro editorin palvelimelle
+
+        $ sudo apt-get install micro
+
+Tein uuden kansion sivua varten
+
+        $ mkdir -p /home/leonardo/public_html/llanga.example.com
+
+Tein myös uuden .html tiedoston kotisivun näkymää varten
+
+        $ micro /home/leonardo/public_html/llanga.example.com/index.html
+
+Tähän tiedostoon kirjoitin HTML/CSS koodia, joka tulee näkymään sivulla llanga.live
+
+Sen jälkeen laitoin sivuston asetukset kuntoon
+
+        $ micro /etc/apache2/sites-available/llanga.example.com.conf
+
+![AsetusTietosto2024-09-15-195054_655x334_scrot](https://github.com/user-attachments/assets/83c5d55e-8d6e-481c-ab5c-3437e6a8c185)
+
+<sub>Näyttökuva 7. .conf asetustiedosto<sub>
+
+Sen jälkeen otin sivuston käyttöön ja käynnistin apachen uudelleen
+
+        $ sudo a2ensite llanga.example.com.conf
+        $ sudo systemctl restart apache2
+
+Tämän jälkeen kokeilin komentoa `curl localhost`, mutta sain virhekoodin 403 HTTP-otsakkeeseen.
+
+![Error403_2024-09-15-195600_655x254_scrot](https://github.com/user-attachments/assets/8c54350e-2e67-464d-be13-9622980ae356)
+
+<sub>Näyttökuva 8. Error 403<sub>
+
+Etsin lokista tietoa
+
+        $ sudo tail /var/log/apache2/error.log
+
+Josta käy ilmi
+
+        (13)Permission denied: [client 185.191.126.213:56244] AH00035: access 
+        to / denied (filesystem path '/home/leonardo/public_html') because 
+        search permissions are missing on a component of the path
+
+Syötin virheviestin `(13)Permission denied: [client 185.191.126.213:56244] AH00035: access 
+        to / denied (filesystem path '/home/leonardo/public_html') because 
+        search permissions are missing on a component of the path` ChatGPT:n, ja vastaus oli
+
+The error message you shared provides a clear indication that the 403 Forbidden error is related to file system permissions. Specifically, Apache is trying to access /home/leonardo/public_html, but it is encountering a Permission Denied error due to missing search permissions on one of the directories in the path.
+Key Details in the Error:
+
+    Permission Denied (Error 13): This means Apache doesn't have permission to access one of the directories in the path leading to /home/leonardo/public_html.
+    Search Permissions: The search (or execute) permission (x on directories) allows Apache to "search" through directories to locate files.
+
+Likely Causes:
+
+    Permissions Issue on Parent Directories: One or more directories in the path (/home, /home/leonardo, or /home/leonardo/public_html) are missing the necessary execute (x) permissions for the web server user (typically www-data on Debian-based systems).
+    Directory Ownership: The directory may not be owned by the correct user, preventing Apache from traversing it.
+
+Solution:
+
+To fix this, you need to ensure that Apache has the necessary permissions on the directory path:
+Step 1: Check Permissions on the Path Components
+
+Run the following command to check the permissions on each directory in the path:
+
+        $ ls -ld /home /home/leonardo /home/leonardo/public_html
+
+This will show the current permissions for each directory in the path.
+Step 2: Grant Execute Permissions on Parent Directories
+
+If the directories `/home` or `/home/leonardo` are missing the `x` (execute) permission, you need to add it:
+
+        $ chmod o+x /home
+        $ chmod o+x /home/leonardo
+
+Olen tottunut näkemään luku/kirjoitus/execute liittyvissä komennoissa komennon joten kysyin ChatGPT:ltä
+
+`difference between chmod 755 /home/leonardo/public_html and chmod o+x /home/leonardo?`
+
+ChatGPT:
+
+> The two commands you mentioned, chmod 755 /home/leonardo/public_html and chmod o+x /home/leonardo, have different purposes and > affect different parts of the file permissions. Here's the difference:
+> 1. chmod 755 /home/leonardo/public_html
+> 
+> This command modifies the permissions of the /home/leonardo/public_html directory to 755. Here's what it means:
+> 
+>     7 (rwx): The owner (leonardo) has read, write, and execute permissions.
+>     5 (r-x): The group (leonardo) and others (including Apache) have read and execute permissions but cannot write.
+>
+> So, this command allows everyone (owner, group, and others) to enter and read files in the public_html directory, but only the owner (leonardo) can modify the files.
+> 2. chmod o+x /home/leonardo
+> 
+> This command adds the execute permission only for "others" (including Apache) on the /home/leonardo directory.
+>
+>    o+x: This gives "others" (anyone who is not the owner or in the group) permission to traverse (execute on directories means "can enter this directory").
+>
+> This command is necessary because Apache needs to traverse the /home/leonardo directory to reach /home/leonardo/public_html, but it doesn't give Apache permission to read the contents of /home/leonardo itself, which keeps it secure.
+> Summary:
+>
+>     chmod 755 /home/leonardo/public_html: Allows anyone (Apache included) to access and read files within public_html, but only leonardo can modify the contents.
+>     chmod o+x /home/leonardo: Grants only the minimal permission needed for Apache to "enter" the /home/leonardo directory and reach public_html, without exposing the contents of /home/leonardo.
+> 
+> Both permissions are important: 755 on public_html allows Apache to read files there, and o+x on /home/leonardo lets Apache traverse through /home/leonardo to get to public_html.
+
+
+
+
+Näin on uusi 
