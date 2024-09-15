@@ -101,7 +101,7 @@ Ei ollut virhe, mutta korjasin sen
     
 ![apacheSTATUskorjattu2024-09-15-191547_759x254_scrot](https://github.com/user-attachments/assets/ab7e6244-e2a5-421c-ad1d-3a1f4aeb1408)
 
-### e) Kotisivut palvelimelle
+### c) Asenna weppipalvelin omalle virtuaalipalvelimellesi.
 
 Tämän jälkeen toisen reijän palomuuriin
 
