@@ -1,9 +1,9 @@
 
 # VPS & Webserver. 15.9 klo 18:30
 
-Tämä Github dokumentin kirjoitus alkoi klo 18:30. Tehtävää varten on tehty valmistelut heti viikkoluennon jälkeen, jotkut kohdat ovat tehty eri aikoihin ja lisätty tähän kirjoitusvaiheessa.
+Tämä Github dokumentin kirjoitus alkoi klo 18:30. Valmistelut alkoivat heti viikkoluennon jälkeen, jotkut kohdat ovat tehty eri aikoina.
 
-Tehtävä b) Tee alkutoimet omalla virtuaalipalvelimellasi & c) Asenna weppipalvelin omalle virtuaalipalvelimellesi oli aloitettu klo sunnuntaina 15.9 klo 18:50 ja lopettettu klo 20:13 onnistuneesti. www.llanga.live
+Tehtävä b) Tee alkutoimet omalla virtuaalipalvelimellasi & c) Asenna weppipalvelin omalle virtuaalipalvelimellesi oli aloitettu klo sunnuntaina 15.9 klo 18:50 ja lopettettu klo 20:13 onnistuneesti. www.llanga.live.
 
 ## Laitteisto
 
