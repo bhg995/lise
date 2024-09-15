@@ -57,8 +57,6 @@ Aloitin ottamalla yhteyttä palvelimeen
 
 ![2024-09-15-185407_655x254_scrot](https://github.com/user-attachments/assets/cb2c22b6-df15-4151-b7d4-55694e18aa84)
 
-<sub>Näyttökuva 1. Kirjautuminen palvelimeen<sub>
-
 Ensin hain päivitykset 
 
         $ sudo apt-get update && sudo apt-get upgrade
@@ -71,16 +69,12 @@ Jonka jälkeen asensin palomuurin, avasin ensimmäisen portin ja kytkin palomuur
 
 ![reikaPalomuuriin2024-09-15-190004_639x318_scrot](https://github.com/user-attachments/assets/bdb064e0-a129-4462-8df3-cb854aa803e4)
 
-<sub>Näyttökuva 2. Palomuuri<sub>
-
 Lisäsinn uuden käyttäjän jolle loin vahvan salasanan, tein myös käyttäjästä sudoerin (sudo-oikeudet)
 
         $ sudo adduser leonardo 
         $ sudo adduser leonardo sudo
 
 ![uusiKaytt2024-09-15-190403_639x622_scrot](https://github.com/user-attachments/assets/7296ca30-1803-458f-97ee-74133046478e)
-
-<sub>Näyttökuva 3. Uusi käyttäjä<sub>
 
 Sen jälkeen oli mahdollista kirjautua uudella käyttäjällä ja lukita juurikäyttäjä (root):
 
@@ -100,16 +94,12 @@ Asensin Apachen virtuaalipalvelimelle ja tarkistin toimivuuden
 Kaikki näytti hyvältä, paitsi apache2.service näytti olevan disabled
 
 ![apacheSTATUS2024-09-15-191500_759x446_scrot](https://github.com/user-attachments/assets/8df61103-583a-48c0-9381-6cc570e0f551)
-
-<sub>Näyttökuva 4. Apache status<sub>
         
 Ei ollut virhe, mutta korjasin sen
 
         $ sudo systemctl enable apache2
     
 ![apacheSTATUskorjattu2024-09-15-191547_759x254_scrot](https://github.com/user-attachments/assets/ab7e6244-e2a5-421c-ad1d-3a1f4aeb1408)
-
-<sub>Näyttökuva 5. Apache status enabled<sub>
 
 ### e) Kotisivut palvelimelle
 
@@ -122,8 +112,6 @@ Korvasin Apache palvelimen oletussivut:
         $ echo HEI MAAILMA! KUULUUKO?|sudo tee /var/www/index.html
 
 ![OletussivuVaihdettu2024-09-15-192234_655x110_scrot](https://github.com/user-attachments/assets/1f148dc2-f767-48cc-ab61-b67b0657e6ef)
-
-<sub>Näyttökuva 6. Palvelimen uusi sivunäkymä<sub>
 
 Otin `userdir`n käyttöön ja käynnistin palvelimen uudestaan
 
@@ -150,8 +138,6 @@ Sen jälkeen laitoin sivuston asetukset kuntoon
 
 ![AsetusTietosto2024-09-15-195054_655x334_scrot](https://github.com/user-attachments/assets/83c5d55e-8d6e-481c-ab5c-3437e6a8c185)
 
-<sub>Näyttökuva 7. .conf asetustiedosto<sub>
-
 Sen jälkeen otin sivuston käyttöön ja käynnistin apachen uudelleen
 
         $ sudo a2ensite llanga.example.com.conf
@@ -160,8 +146,6 @@ Sen jälkeen otin sivuston käyttöön ja käynnistin apachen uudelleen
 Tämän jälkeen kokeilin komentoa `curl localhost`, mutta sain virhekoodin 403 HTTP-otsakkeeseen.
 
 ![Error403_2024-09-15-195600_655x254_scrot](https://github.com/user-attachments/assets/8c54350e-2e67-464d-be13-9622980ae356)
-
-<sub>Näyttökuva 8. Error 403<sub>
 
 Etsin lokista tietoa
 
@@ -245,7 +229,9 @@ Tarkistin että sivu toimii myös selaimen kautta
 
 ![kotisivut2024-09-15-214418_1000x727_scrot](https://github.com/user-attachments/assets/80a581da-44f6-4d62-8993-1195c8385283)
 
-<sub>Näyttökuva 9. Toimiva kotisivu<sub>
+Sekä että toimii näkyy asianmukaisesti puhelimessa
+
+![IMG_0411 3](https://github.com/user-attachments/assets/52149d34-8993-45ba-bc88-6224709e990a)
 
 Klo 20:13 olin valmis ja sivu pyörii
 
