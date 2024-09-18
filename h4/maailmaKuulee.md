@@ -190,7 +190,7 @@ Syötin virheviestin `(13)Permission denied: [client 185.191.126.213:56244] AH00
 >        $ chmod o+x /home
 >        $ chmod o+x /home/leonardo
 
-Olen tottunut näkemään luku/kirjoitus/execute liittyvissä komennoissa komennon joten kysyin ChatGPT:ltä
+Olen tottunut näkemään luku/kirjoitus/execute liittyvissä komennoissa komennon `chmod 755` joten kysyin ChatGPT:ltä
 
 `difference between chmod 755 /home/leonardo/public_html and chmod o+x /home/leonardo?`
 
