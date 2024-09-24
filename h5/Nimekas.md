@@ -164,7 +164,7 @@ Selaimella näytti OK!
 
 ## b) Alidomain
 
-En ymmärtänyt tehtävää hyvin, mutta käytin CNAME recordia luodakseen alidomaineja namecheapissä.
+En ymmärtänyt tehtävää hyvin, voi olla että olin tehnyt a) tehtävän jälkimmäiset sivut osittain alidomainena?. Loin silti CNAME record luodakseen alidomaineja namecheapissä. Otan selvää seuraavalla tunnilla.
 
 ![Näyttökuva 2024-9-25 kello 1 11 24](https://github.com/user-attachments/assets/4a639787-9dd5-424c-9bb0-6fafcd3a0835)
 
