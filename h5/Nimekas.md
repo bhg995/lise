@@ -1,16 +1,15 @@
 
 # Nimekäs
 
-_"Dig (Domain Information Groper) is a powerful command-line tool for querying DNS name servers"._ [1]
-
-_"Most DNS administrators use dig to troubleshoot DNS problems because of its flexibility, 
-ease of use, and clarity of output. Other lookup tools tend to have less functionality than dig"._ [2]
+_"Dig (Domain Information Groper) is a powerful command-line tool for querying DNS name servers.
+Most DNS administrators use dig to troubleshoot DNS problems because of its flexibility, 
+ease of use, and clarity of output. Other lookup tools tend to have less functionality than dig"_ [1]
 
 `dig` Komento on tehokas apuväline DNS-tietojen tarkisteluun.
 
-_"`host` is a simple utility for performing DNS lookups. It is normally used to convert names to IP addresses and vice versa"._ [3] 
+_"`host` is a simple utility for performing DNS lookups. It is normally used to convert names to IP addresses and vice versa"._ [2]
 
-`scp` Komennolla voi kopioida tiedostoja turvallisesti verkon ylitse palvelimeen SSH-yhteydellä. `scp` voi pyytää salasanaa jos sitä tarvitaan.
+`scp` Komennolla voi kopioida tiedostoja turvallisesti verkon ylitse palvelimeen SSH-yhteydellä. `scp` voi pyytää salasanaa jos sitä tarvitaan. [3]
 
 ## Laitteisto
 
