@@ -22,7 +22,7 @@ _"`host` is a simple utility for performing DNS lookups. It is normally used to 
 - Tallennustila: 32 Gt
 
 
-### a) Kotisivu. Tee vähintään kolmen erillisen weppisivun kotisivu ja kopioi se näkymään palvelimellesi. 
+## a) Kotisivu. Tee vähintään kolmen erillisen weppisivun kotisivu ja kopioi se näkymään palvelimellesi. 
 
 Tein uuden virtuaalikoneen ja nimesin sen mansikaksi
 
