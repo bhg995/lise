@@ -106,7 +106,7 @@ Muutin Apachen VirtualHost-asetukset
 
     
 
-Edellisessä tehtävässä [MaailmaKuulee](https://github.com/bhg995/lise/blob/main/h4/maailmaKuulee.md) käyttäjän oikeudet kansioiden kanssa oli hieman ongelmaa. Konfiguroimalla oikeuksia tässä vaiheessa.
+Edellisessä tehtävässä [MaailmaKuulee](https://github.com/bhg995/lise/blob/main/h4/maailmaKuulee.md) käyttäjän oikeudet kansioiden kanssa oli hieman ongelmaa. Muokkasin kansioiden käyttöoikeuksia tässä vaiheessa..
 
     chmod o+x /home
     chmod o+x /home/immanuel
@@ -124,7 +124,7 @@ Loin virtualhost konfiguraatiot apachelle:
 
 ![Näyttökuva 2024-9-25 kello 0 23 50](https://github.com/user-attachments/assets/9d8f69d0-baf9-4a5c-b1f7-51b063f80679)
 
-sivuille 2 ja kolme muutin ServerNameksi `site2.llanga.live` ja `site3.llanga.live`
+sivuille 2 ja 3 muutin ServerNameksi `site2.llanga.live` ja `site3.llanga.live`
 
 Tämän jälkeen otin palvelimet käyttöön
 
@@ -138,9 +138,9 @@ Sitten käynnistin Apachen uudelleen
 
 Tämän jälkeen aloin luoda HTML sivut ja linkitin toisiinsa:
 
-    micro /var/www/llanga.live/public_html/index.html
-    micro /var/www/site2.llanga.live/public_html/index.html
-    micro /var/www/site3.llanga.live/public_html/index.html
+    micro /home/immanuel/public_html/site1/index.html
+    micro /home/immanuel/public_html/site2/index.html
+    micro /home/immanuel/public_html/site3/index.html
     
 
 ![Näyttökuva 2024-9-24 kello 17 26 34](https://github.com/user-attachments/assets/7cafdd34-5144-47b8-9128-98295ec680b7)
