@@ -118,7 +118,7 @@ Sitten otin userdir käyttöön
 
 Loin virtualhost konfiguraatiot apachelle:
 
-    sudo micro /etc/apache2/sites-available/site1.llanga.live.conf
+    sudo micro /etc/apache2/sites-available/llanga.live.conf
     sudo micro /etc/apache2/sites-available/site2.llanga.live.conf
     sudo micro /etc/apache2/sites-available/site3.llanga.live.conf
 
