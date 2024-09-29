@@ -222,12 +222,11 @@ Hain tietoa Googlesta, ja löysin ohjeen miten sulkea käynnissä olevat portit.
 
 > [Stackoverflow.com](https://stackoverflow.com/questions/20239232/django-server-error-port-is-already-in-use), [Mounir](https://stackoverflow.com/users/935241/mounir)
 
+[[7](https://stackoverflow.com/questions/20239232/django-server-error-port-is-already-in-use)] [[8](https://man7.org/linux/man-pages/man2/kill.2.html)]
+
 Kokeilin mitkä portit ovat estämässä. Vahingossa suljin selaimen, mutta samalla varmistuin että syntaksi toimii:
 
 ![Näyttökuva 6](https://github.com/user-attachments/assets/f3135e0c-9089-4db3-8d31-8568e036b1d9)
-
-
-[[7](https://stackoverflow.com/questions/20239232/django-server-error-port-is-already-in-use)] [[8](https://man7.org/linux/man-pages/man2/kill.2.html)]
 
 ![Näyttökuva 7](https://github.com/user-attachments/assets/662b118d-2e08-40ed-b8e5-6a07bdc78f27)
 
