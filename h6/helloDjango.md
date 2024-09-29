@@ -162,7 +162,7 @@ Selaimessa kuitenkin:
 
 ![Näyttökuva _1](https://github.com/user-attachments/assets/5b952b1b-4de3-4424-8248-adc17445e861)
 
-Lopetin 17:35
+Lopetin 28.9 17:35
 
 Tulin illemmalla takaisin, kokeilin vielä kerran Djangon käyttöönottoa onnistumatta.
 
@@ -178,7 +178,7 @@ Sitten kokeilin uudestaan, seuraamalla opettajan ohjeita.
 
 ![Näyttökuva 3](https://github.com/user-attachments/assets/d4488fdb-59bc-4f55-9116-a048ba5dfa01)
 
-Kello 0:11 Djangon raketti näkyi selaimella.
+29.9 klo 0:11 Djangon raketti näkyi selaimella.
 
 **CRM** 
 
@@ -235,7 +235,261 @@ Kokeilin mitkä portit ovat estämässä. Vahingossa suljin selaimen, mutta sama
 
 ![Näyttökuva 10](https://github.com/user-attachments/assets/1ff9ffc8-b0b9-438d-bee4-d7689d44cd74)
 
+CRM toimii. Selailin Djangoa ja lisäsin uuden käyttäjän.
 
+## b) Tee Djangon tuotantotyyppinen asennus
+
+Aloitin klo 29.9 22.24. Seuraan opettajan [ohjeita](https://terokarvinen.com/2022/deploy-django/)
+
+Päivitin koneen ja käynnistän Apachen.
+
+    sudo apt-get update
+    sudo systemctl start apache2
+
+Tein uuden kansion:
+
+    mkdir -p publicwsgi//tuotantoDjango/static/
+
+Valmistelin `.html` tiedoston:
+
+    echo "Statically see you at llanga.live."|tee publicwsgi/tuotantoDjango/static/index.html
+
+
+Lisäsin konfiguraatioasetuksiin polun
+
+    Alias /static /home/uhse/publicwsgi/tuotantoDjango/static/
+    <Directory /home/uhse/publicwsgi/tuotantoDjango/static/>
+        Require all granted
+    </Directory>
+
+Sivuasetukset:
+
+    sudo a2dissite 000-default.conf 
+    sudo a2ensite llanga.live.conf
+    
+![Näyttökuva 2024-9-29 kello 23 14 09](https://github.com/user-attachments/assets/f065c5a8-18ec-4d56-9e02-5a2aa40ee65d)
+
+![Näyttökuva 2024-9-29 kello 23 14 53](https://github.com/user-attachments/assets/5d50d535-4bc6-4355-af41-2eafd97328cf)
+
+**Django virtuaaliympäristön asennus**
+
+    echo "Statically see you at llanga.live."|tee publicwsgi/tuotantoDjango/static/index.html
+    cd publicwsgi/
+    virtualenv -p python3 --system-site-packages env
+    source env/bin/activate
+
+Pääsin virtuaaliympäristöön, josta pääsin asentamaan Djangon.
+
+    pip install -r requirements.txt
+
+    Successfully installed django-4.2.16
+
+Sitten aloitin Django projektin:
+
+    django-admin startproject tuotantoDjango
+    micro /etc/apache2/sites-available/llanga.live.conf
+
+Muokkasin opettajan esimerkkiä ja lisäsin omat muuttujat:
+
+    Define TDIR /home/uhse/publicwsgi/tuotantoDjango
+    Define TWSGI /home/uhse/publicwsgi/tuotantoDjango/wsgi.py
+    Define TUSER uhse
+    Define TVENV /home/uhse/publicwsgi/env/lib/python3.9/site-packages
+
+
+    <VirtualHost *:80>
+        Alias /static/ ${TDIR}/static/
+        <Directory ${TDIR}/static/>
+                Require all granted
+        </Directory>
+
+        WSGIDaemonProcess ${TUSER} user=${TUSER} group=${TUSER} threads=5 python-path="${TDIR}:${TVENV}"
+        WSGIScriptAlias / ${TWSGI}
+        <Directory ${TDIR}>
+             WSGIProcessGroup ${TUSER}
+             WSGIApplicationGroup %{GLOBAL}
+             WSGIScriptReloading On
+             <Files wsgi.py>
+                Require all granted
+             </Files>
+        </Directory>
+
+    </VirtualHost>
+
+    Undefine TDIR
+    Undefine TWSGI
+    Undefine TUSER
+    Undefine TVENV
+
+Apachen moduuli virtuaaliympäristössä:
+
+    sudo apt-get -y install libapache2-mod-wsgi-py3
+    /sbin/apache2ctl configtest
+
+![Näyttökuva 2024-9-29 kello 23 39 58](https://github.com/user-attachments/assets/596af884-552a-49a0-b9c9-7d0d20e3ed20)
+
+    sudo systemctl restart apache2
+    curl -s localhost|grep title
+
+Virhe:
+
+    <title>404 Not Found</title>
+
+Tarkistin lokista:
+
+    sudo tail -f /var/log/apache2/error.log
+
+Loki:
+
+    Mon Sep 30 00:10:04.536650 2024] [wsgi:error] [pid 4838:tid 4847] [client ::1:59554] Target WSGI script not found or unable to stat: /home/uhse/publicwsgi/tuotantoDjango/wsgi.py
+    [Mon Sep 30 00:12:11.162752 2024] [wsgi:error] [pid 4838:tid 4852] [client 127.0.0.1:44910] Target WSGI script not found or unable to stat: /home/uhse/publicwsgi/tuotantoDjango/wsgi.py
+
+Tarkemmin:
+
+    Target WSGI script not found or unable to stat: /home/uhse/publicwsgi/tuotantoDjango/wsgi.py
+
+Eli Django ei päässyt käsiksi `wsgi.py` tiedostoon. Tarkistin missä tiedosto on -> /home/uhse/publicwsgi/tuotantoDjango/tuotantoDjango/wsgi.py.
+
+Ajoin `django-admin startproject` _tuotantoDjango_ kansion sisällä, joka loi uuden samannimisen kansion , jossa kyseinen tiedosto oli.
+
+Kävin vaihtamassa `.conf` tiedostossa poluksi /home/uhse/publicwsgi/tuotantoDjango/tuotantoDjango/wsgi.py.
+
+![Näyttökuva 2024-9-30 kello 0 29 48](https://github.com/user-attachments/assets/4f97f94c-af01-49b1-af95-b9c3600d2d3e)
+
+![Näyttökuva 2024-9-30 kello 0 31 53](https://github.com/user-attachments/assets/3e20100d-d511-4025-bd88-4cdc212154a5)
+
+Django käynnistyi.
+
+Debug ottaminen pois käytöstä. Näin rikolliset tai muut eivät pääse näkemään tarkasti virheviestejä.
+
+    micro tuotantoDjango/settings.py
+
+Vaihdoin `ALLOWED_HOSTS` muuttujan `True`:ksi
+
+    ALLOWED_HOSTS = ["localhost", "llanga.live"]
+
+Sekä lisäsin:
+
+    import os
+
+ja:
+
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+Sen jälkeen:
+
+    touch tuotantoDjango/wsgi.py
+    sudo systemctl restart apache2
+
+![Näyttökuva 2024-9-30 kello 0 38 59](https://github.com/user-attachments/assets/c5e47f6a-1a3c-46ef-b1f0-da6867b5ef58)
+
+![Näyttökuva 2024-9-30 kello 0 59 08](https://github.com/user-attachments/assets/1c8942a1-88bf-440c-be99-dde8767923dd)
+
+Tein uuden käyttäjän `leonardo`, jotta pääsen käyttämään Djangoa.
+
+![Näyttökuva 2024-9-30 kello 1 01 01](https://github.com/user-attachments/assets/814ce177-1bef-4569-befa-52f602a1857c)
+
+Klo 01:00 tuotantotyyppinen Django on valmis
+
+![Näyttökuva 2024-9-30 kello 1 03 14](https://github.com/user-attachments/assets/d7abc332-7473-4f21-b8c7-822b097eb991)
+
+## PostgreSQL
+
+Tehtävä osoittautui hankalaksi, joten kysyin kokeilin CHATGPT
+
+Prompt:
+
+> PostgreSQL käyttöönotto Djangossa (env) ympäristössä
+
+Vastauksena sain ohjeet:
+
+Asenna psycopg2-kirjasto, joka mahdollistaa Djangon yhteyden PostgreSQL:ään:
+
+    pip install psycopg2
+
+Avaa projektisi settings.py-tiedosto ja muuta tietokantakonfiguraatiota PostgreSQL:ksi :
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'your_db_name',
+            'USER': 'your_db_user',
+            'PASSWORD': 'your_db_password',
+            'HOST': 'localhost',  # tai '127.0.0.1'
+            'PORT': '5432',       # Oletusportti
+        }
+    }
+
+Siirry PostgreSQL komentoikkunaan:
+
+    sudo -u postgres psql
+
+Luo uusi tietokanta:
+
+    CREATE DATABASE your_db_name;
+    CREATE USER your_db_user WITH PASSWORD 'your_db_password';
+    ALTER ROLE your_db_user SET client_encoding TO 'utf8';
+    ALTER ROLE your_db_user SET default_transaction_isolation TO 'read committed';
+    ALTER ROLE your_db_user SET timezone TO 'UTC';
+    GRANT ALL PRIVILEGES ON DATABASE your_db_name TO your_db_user;
+
+Poistu PostgreSQL-komentoriviltä:
+
+    \q
+
+Luo malleja models.py-tiedostoon ja suorita migraatiot:
+
+    # myapp/models.py
+    from django.db import models
+
+    class MyModel(models.Model):
+        name = models.CharField(max_length=100)
+        value = models.IntegerField()
+
+Suorita seuraavat komennot:
+
+    python manage.py makemigrations
+    python manage.py migrate
+
+Avaa Python shell Djangossa ja testaa tietojen tallentamista:
+
+    python manage.py shell
+
+    from myapp.models import MyModel
+
+    # Luo uusi objekti
+    obj = MyModel(name='Test', value=123)
+    obj.save()  # Tallenna tietokantaan
+
+Voit tarkistaa tiedot PostgreSQL komentoikkunasta:
+
+    sudo -u postgres psql your_db_name
+    SELECT * FROM myapp_mymodel;  -- Varmista, että objekti tallentui
+
+-------------CHATGPT vastaus loppuu -----------
+
+<br>
+
+![Näyttökuva 2024-9-30 kello 2 13 52](https://github.com/user-attachments/assets/c47bfeef-64e6-4c10-9707-53d889f9c623)
+
+settings.py
+
+![Näyttökuva 2024-9-30 kello 2 03 04](https://github.com/user-attachments/assets/95acbeca-402b-4052-99c4-7aa23ef8c2d5)
+
+./manage.py migrate
+
+![Näyttökuva 2024-9-30 kello 2 39 42](https://github.com/user-attachments/assets/6620fcbd-49a9-4862-9e45-25cbd5d74b79)
+
+Huomasin että PostgreSQL sisällä komentojen käyttö oli vaikeata, sain usein syntaksivirheitä. Epäonnistuin luomaan käyttäjän oikealla tavalla, josta tuli myöhemmin virheitä kun yritin ajaa komennon `./manage.py migrate`. Sain virheviestin 
+
+        psycopg2. OperationalError: FATAL: password authentication dailed for user "leonardo" 
+        FATAL: password authentication failed for user "leonardo"
+
+[[9](https://pimylifeup.com/raspberry-pi-postgresql/)] [[10](https://www.postgresql.org/docs/current/user-manag.html)]
+
+Näin että ongelma oli salasanassa, ja se oli joko väärä tai se puuttui, mutta muuten PostgreSQL pitäisi toimia. Yritän saada toimimaan myöhemmin.
+
+Lopetin klo 30.9 02:40
 
 1. https://www.djangoproject.com/
 2. https://en.wikipedia.org/wiki/Django_(web_framework)
@@ -245,3 +499,5 @@ Kokeilin mitkä portit ovat estämässä. Vahingossa suljin selaimen, mutta sama
 6. https://terokarvinen.com/2022/django-instant-crm-tutorial/
 7. https://stackoverflow.com/questions/20239232/django-server-error-port-is-already-in-use
 8. https://man7.org/linux/man-pages/man2/kill.2.html
+9. https://pimylifeup.com/raspberry-pi-postgresql/
+10. https://www.postgresql.org/docs/current/user-manag.html
