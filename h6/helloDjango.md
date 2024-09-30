@@ -12,6 +12,16 @@ Avoimeen lähteeseen perustuva Django on web-kehys joka toimii Pythonilla. Djang
 
 "_PostgreSQL (pgsql) on SQL-kieltä tukeva avoimen lähdekoodin tietokantamoottori._" - Linux.fi-wiki [[4](https://www.linux.fi/wiki/PostgreSQL)]
 
+# Laitteisto
+
+- Näyttö: AOC G2490VXA, 24" QHD(1440p), 144Hz
+- Raspberry Pi 4 model B 4 Gt
+- Käyttöjärjestelmä: Raspberry Pi OS 32bit kernel (based on Debian)
+- CPU: Broadcom BCM2711 SoC with a 1.8 GHz 64-bit quad-core ARM Cortex-A72 processor, with 1 MB shared L2 cache.
+- Näytönohjain: Broadcom VideoCore VI @ 500 MHz
+- Muisti: 4 Gt
+- Tallennustila: 32 Gt
+
 # Tehtävät
 
 ## a) Tee yksinkertainen esimerkkiohjelma Djangolla.
@@ -110,7 +120,7 @@ Sain virheviestin
                         ^^^^^^
         NameError: name 'models' is not defined
 
-Tämä oli helppo korjata, koodipätkä on tiedostossa `crm/admin.py`. Koodista puuttui `from . import models`. Lisäsin sen 
+Koodipätkä on tiedostossa `crm/admin.py`. Koodista puuttui `from . import models`. Lisäsin sen 
 
     from django.contrib import admin
     from . import models
@@ -126,6 +136,8 @@ Sain tulokseksi:
 ![Näyttökuva 2024-9-28 kello 13 02 21](https://github.com/user-attachments/assets/db5b6237-8bfd-4800-bbb8-b075264bce5a)
 
 Tässä vaiheessa en ollut varma että toimiiko Django niinkuin pitäisi.
+
+    curl -s localhost|grep title # access without GUI
 
 Sain osoitteen `http://127.0.0.1:8000/` josta olisin voin tarkistaa selaimella, mutta käytän Djangoa palvelimen kautta. Curl komennolla pitäisi näkyä että näkyykö sivu, mutta saan virheviestin:
 
@@ -168,7 +180,7 @@ Tulin illemmalla takaisin, kokeilin vielä kerran Djangon käyttöönottoa onnis
 
 Päätin aloittaa tyhjältä pöydältä.
 
-Poistin Djangon, sille luomani ympäristön ja Apachen. Epäilin että Apachella olisi vaikutusta.
+Poistin Djangon, sille luomani ympäristön ja Apachen. Epäilin että Apachella olisi vaikutusta. # https://stackoverflow.com/questions/30670759/run-django-without-apache-using-runserver-on-port-80-and-accessible-outside-lan
 
 Sitten kokeilin uudestaan, seuraamalla opettajan ohjeita.
 
@@ -288,7 +300,7 @@ Sitten aloitin Django projektin:
     django-admin startproject tuotantoDjango
     micro /etc/apache2/sites-available/llanga.live.conf
 
-Muokkasin opettajan esimerkkiä ja lisäsin omat muuttujat:
+Muokkasin opettajan esimerkkiä ja vaihdoin kansion nimen, sekä polun:
 
     Define TDIR /home/uhse/publicwsgi/tuotantoDjango
     Define TWSGI /home/uhse/publicwsgi/tuotantoDjango/wsgi.py
@@ -349,7 +361,7 @@ Tarkemmin:
 
 Eli Django ei päässyt käsiksi `wsgi.py` tiedostoon. Tarkistin missä tiedosto on -> /home/uhse/publicwsgi/tuotantoDjango/tuotantoDjango/wsgi.py.
 
-Ajoin `django-admin startproject` _tuotantoDjango_ kansion sisällä, joka loi uuden samannimisen kansion , jossa kyseinen tiedosto oli.
+Ajoin `django-admin startproject` komennon _tuotantoDjango_ kansion sisällä, joka loi uuden samannimisen kansion , jossa kyseinen tiedosto oli.
 
 Kävin vaihtamassa `.conf` tiedostossa poluksi /home/uhse/publicwsgi/tuotantoDjango/tuotantoDjango/wsgi.py.
 
@@ -388,13 +400,13 @@ Tein uuden käyttäjän `leonardo`, jotta pääsen käyttämään Djangoa.
 
 ![Näyttökuva 2024-9-30 kello 1 01 01](https://github.com/user-attachments/assets/814ce177-1bef-4569-befa-52f602a1857c)
 
-Klo 01:00 tuotantotyyppinen Django on valmis
+Klo 01:00 tuotantotyyppinen Django oli valmis
 
 ![Näyttökuva 2024-9-30 kello 1 03 14](https://github.com/user-attachments/assets/d7abc332-7473-4f21-b8c7-822b097eb991)
 
 ## PostgreSQL
 
-Tehtävä osoittautui hankalaksi, joten kysyin kokeilin CHATGPT
+Tehtävä osoittautui hankalaksi, ja kokeilin CHATGPT.
 
 Prompt:
 
@@ -479,14 +491,14 @@ settings.py
 
 ![Näyttökuva 2024-9-30 kello 2 39 42](https://github.com/user-attachments/assets/6620fcbd-49a9-4862-9e45-25cbd5d74b79)
 
-Huomasin että PostgreSQL sisällä komentojen käyttö oli vaikeata, sain usein syntaksivirheitä. Epäonnistuin luomaan käyttäjän oikealla tavalla, josta tuli myöhemmin virheitä kun yritin ajaa komennon `./manage.py migrate`. Sain virheviestin 
+Huomasin että PostgreSQL sisällä komentojen käyttö oli vaikeata, sain usein syntaksivirheitä. Epäonnistuin luomaan käyttäjän oikealla tavalla, josta tuli myöhemmin virheitä kun yritin ajaa komennon `./manage.py migrate`. Esim. 
 
         psycopg2. OperationalError: FATAL: password authentication dailed for user "leonardo" 
         FATAL: password authentication failed for user "leonardo"
 
 [[9](https://pimylifeup.com/raspberry-pi-postgresql/)] [[10](https://www.postgresql.org/docs/current/user-manag.html)]
 
-Näin että ongelma oli salasanassa, ja se oli joko väärä tai se puuttui, mutta muuten PostgreSQL pitäisi toimia. Yritän saada toimimaan myöhemmin.
+Näin että ongelma oli salasanassa, mutta muuten PostgreSQL pitäisi toimia. Yritän kokeilla myöhemmin uudelleen.
 
 Lopetin klo 30.9 02:40
 
