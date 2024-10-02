@@ -502,6 +502,72 @@ Näin että ongelma oli salasanassa, mutta muuten PostgreSQL pitäisi toimia. Yr
 
 Lopetin klo 30.9 02:40
 
+**PÄIVITYS 2.10.2024 klo 16:50**
+
+Yritin saada PostgreSQL-tietokannan toimimaan Djangossa, ennen tuntia. En ymmärtänyt missä vika oli, vaihdoin `settings.py`-tiedostossa salasanan, olin jo kokeillut ilman salasanaa sekä salasanalla, jota varmasti käytin luodessani käyttäjän.
+
+Ei onnistunut, sain edelleen saman virheviestin:
+
+    django.db.utils.OperationalError: FATAL:  password authentication failed for user "leonardo"
+    FATAL:  password authentication failed for user "leonardo"
+
+Kirjoitin saman virheviestin googleen, poistin oman käyttäjänimen ja kansionimen. Löysin [StackOverFlow:sta](https://stackoverflow.com/questions/43060857/postgresql-fatal-password-authentication-failed-for-user-douglas) vastaavan kysymyksen. Ensimmäinen vastaaja ehdotti salasanan vaihtamista PostgreSQL:ssä, kokeilin sitä ensin myös:
+
+![Näyttökuva 2024-10-2 kello 17 24 24](https://github.com/user-attachments/assets/f0b2555d-b567-4238-9a5a-b2fbaefbbd54)
+
+[[11](https://stackoverflow.com/questions/43060857/postgresql-fatal-password-authentication-failed-for-user-douglas)]
+
+Suljin tietokannan, ja kokeilin `./manage.py makemigrations` uudelleen, ja sain saman virhekoodin. Tämä ei kuitenkaan toiminut, sillä syntaksini oli väärä.
+
+Tietokantojen komennoissa, oikeinkirjoitus ja `;` merkki ovat tärkeitä. 
+
+SQL- harjoituksista oli jo vähän aikaa, ja ennenkuin tajusin edes virhettä. Päätin poistaa käyttäjän.
+
+Mieleeni tuli poistaa kyseinen käyttäjä, ja luoda uusi. Näin voisin ainakin saada tietokannan toimimaan.
+
+Etsin tietoa googlesta hakemalla:
+
+    Google: how to delete users in postgres
+
+Löysin PosgreSQL: sivuilta `dropuser` komennon, mutta ihmettelin syntaksia, komennot olivat kirjoitettu pienellä. 
+[[12](https://www.postgresql.org/docs/current/app-dropuser.html)]
+
+Avasin uudelleen tietokannan ja yritin poistaa käyttäjän `leonardo`:
+
+![Näyttökuva 2024-10-2 kello 17 29 03](https://github.com/user-attachments/assets/8095791c-b2e5-4373-8d60-73daa5c7499a)
+
+Ensin oli syntaksivirheitä, sain ne korjattua. 
+
+Toiseksi, en voinut poistaa käyttäjää koska siihen oli sidottu koko tietokanta. 
+
+Samasta kysymysketjusta löysin
+
+    What worked for me on AWS RDS (PostgreSQL 13) is the following:
+
+    REVOKE ALL PRIVILEGES ON DATABASE <my_db> FROM <my_user>;
+
+    I also had a similar error where the role was owner for tables so it couldn't be dropped, had to re-assign table owner with:
+
+    ALTER TABLE <my_table> OWNER TO <trusted_role>;
+
+    In fact, on RDS, AWS doesn't give you full superuser to your master user, so the following REASSIGN command fails:
+
+    REASSIGN OWNED BY <olduser> TO <newuser>;
+
+    edited May 6 at 11:34
+    Eddie C.'s user avatar
+    Eddie C.
+    9961010 silver badges1818 bronze badges
+    answered Sep 16, 2021 at 19:48
+    Andrew's user avatar
+    Andrew
+
+Peruin `leonardo`-käyttäjän oikeudet, jonka jälkeen järjestelmä suostui poistamaan käyttäjän. Tarkistin vielä käyttäjän komennolla `\du`
+
+Käyttäjä oli poistunut onnistuneesti. Nyt voisin kokeilla uudestaan tietokannan käyttöönottoa.
+
+Päätin jatkaa myöhemmin, koska tunti oli alkanut jo.
+
 1. https://www.djangoproject.com/
 2. https://en.wikipedia.org/wiki/Django_(web_framework)
 3. https://www.tieturi.fi/koulutusala/ohjelmistokehitys/ohjelmoinnin-viitekehykset
@@ -512,3 +578,5 @@ Lopetin klo 30.9 02:40
 8. https://man7.org/linux/man-pages/man2/kill.2.html
 9. https://pimylifeup.com/raspberry-pi-postgresql/
 10. https://www.postgresql.org/docs/current/user-manag.html
+11. https://stackoverflow.com/questions/43060857/postgresql-fatal-password-authentication-failed-for-user-douglas
+12. https://www.postgresql.org/docs/current/app-dropuser.html
