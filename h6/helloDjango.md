@@ -576,6 +576,9 @@ Tein käyttäjän uudelleen, käytin samaa käyttäjänimeä ja salasanaa, joten
 
 Tällä kertaa Django käynnistyi OK, mutta sain virhekoodin `[02/Oct/2024 16:09:09] "GET / HTTP/1.1" 400 143` kun yritin avata selaimella.
 
+![Näyttökuva 2024-10-2 kello 19 17 04](https://github.com/user-attachments/assets/b23d556e-acb9-4e9f-91a3-522cf973bcf2)
+
+
 
 1. https://www.djangoproject.com/
 2. https://en.wikipedia.org/wiki/Django_(web_framework)
