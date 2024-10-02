@@ -14,7 +14,7 @@ Output:
 
 If you know what you're doing, you can choose location other than the default. Otherwise stick with default location, as SSH-clients will automatically search this location for SSH-keys. 
 
-Be careful! If you had previously generated SSH-keys, so the new key pair will be wiped out and new keys generated. [3](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)
+Be careful! If you had previously generated SSH-keys, the existing key pair will be wiped out and new keys generated. [3](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)
 
 ![Näyttökuva 2024-9-27 kello 15 12 23](https://github.com/user-attachments/assets/69049c5d-913a-4b9d-a5d6-8569b03067ae)
 
