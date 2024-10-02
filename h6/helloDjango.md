@@ -568,6 +568,15 @@ Käyttäjä oli poistunut onnistuneesti. Nyt voisin kokeilla uudestaan tietokann
 
 Päätin jatkaa myöhemmin, koska tunti oli alkanut jo.
 
+**Tunnin aikana tein seuraavan:**
+
+Tein käyttäjän uudelleen, käytin samaa käyttäjänimeä ja salasanaa, joten `settings.py`-tiedostoa ei tarvinnut muokkaa.
+
+![Näyttökuva 2024-10-2 kello 19 12 02](https://github.com/user-attachments/assets/f637d602-fb9b-4caf-ab30-aa210c69bc87)
+
+Tällä kertaa Django käynnistyi OK, mutta sain virhekoodin `[02/Oct/2024 16:09:09] "GET / HTTP/1.1" 400 143` kun yritin avata selaimella.
+
+
 1. https://www.djangoproject.com/
 2. https://en.wikipedia.org/wiki/Django_(web_framework)
 3. https://www.tieturi.fi/koulutusala/ohjelmistokehitys/ohjelmoinnin-viitekehykset
