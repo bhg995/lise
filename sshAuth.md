@@ -54,6 +54,10 @@ Type `yes` to add your ip address to list of known hosts. [3](https://www.digita
 
 Then enter the passphrase for the SSH-key pair and you should be connected to your server securely.
 
+### Copy your public key
+
+    ssh-copy-id username@server_ip_address
+
 Sources
 
 1. https://www.ibm.com/support/pages/steps-creating-ssh-keys
