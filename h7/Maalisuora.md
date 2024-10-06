@@ -17,9 +17,9 @@
 - Ympäristö: DigitalOcean VPS
 - Käyttöjärjestelmä: Debian 12, arm64
 
-## a) Kirjoita ja aja "Hei maailma" kolmella kielellä. 
+## a) Kirjoita ja aja "Hei maailma" kolmella kielellä. su 6.10.2024
 
-klo 18:20 - 19:00
+tämä osio klo 18:20 - 19:00
 
 Hyödynsin opettajan sivuilla olevia ohjeita.
 
@@ -52,6 +52,8 @@ Testi:
 ![19 01 58_HelloWorldPythonilla](https://github.com/user-attachments/assets/67c505b1-25eb-43d8-896d-b6252548d0c1)
 
 ## b) Laita Linuxiin uusi komento niin, että kaikki käyttäjät voivat ajaa sitä.
+
+Tämä osio klo 19:30 - 20:30
 
 Testiä varten tein uuden käyttäjän `galileo`. Tämä käyttäjä ei kuulunut `sudo` ryhmään eikä `adm` ryhmään.
 
@@ -88,6 +90,8 @@ Komento `hei.sh` toimii nyt eri käyttäjillä.
 
 ## c) Ratkaise vanha arvioitava laboratorioharjoitus soveltuvin osin.
 
+Tämä osio 20:30 - 21.20
+
 Teen harjoituksen käyttäjänä `leonardo`, ja testaan sitä käyttäjällä `immanuel`
 
 Valitsin edellisen toteutuksen labraharjoituksen osan:
@@ -121,6 +125,8 @@ Seuraavaksi kirjauduin käyttäjällä `immanuel` ja kokeilin päästä käsiksi
 ![Näyttökuva 2024-10-6 kello 21 16 56](https://github.com/user-attachments/assets/756c22a8-5969-4944-80bf-2c05166a0822)
 
 Järjestelmä antoi vastaukseksi `permission denied` kun yritin avata `immanuel`-käyttäjällä `leonardo`-käyttäjän tiedostoa. Katsoin vielä `leonardo`-käyttäjän kansiota, johon muillakin oli lukuoikeus, järjestelmä kertoi vielä että tiedostoihin ja kansioihin ei ole asiaa.
+
+Aloitin tehtävät klo 18:20 ja olin valmis 21:20
 
 [8]
 
