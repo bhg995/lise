@@ -97,7 +97,7 @@ Komento `hei.sh` toimii nyt eri käyttäjillä.
 
 ## c) Ratkaise vanha arvioitava laboratorioharjoitus soveltuvin osin.
 
-### Rinnakkaisarvioinnissa huomattu että tässä tehtävässä tehty vain yksi tehtävä kokonaisuudesta. Päätin että jatkan labraharjoituksia, ja lisään ne raporttiini ennen tehtävän deadlinea.
+### Rinnakkaisarvioinnissa huomasin että tässä tehtävässä tein vain yhden tehtävän, harjoituksen kokonaisuudesta. Päätin että jatkan labraharjoituksia, ja lisään ne raporttiini ennen tehtävän deadlinea.
 
 Tämä osio 20:30 - 21.20
 
