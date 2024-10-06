@@ -8,18 +8,23 @@
 
 ## Laitteisto
 
-- Tietokone: MacBook Air (13-inch, 2017) **INTEL**
+- **Tietokone: MacBook Air (13-inch, 2017) INTEL**
 - Käyttöjärjestelmä: macOS Monterey 12.7.5
 - Prosessori: 1,8 GHz Kaksiytiminen Intel Core i5
 - Muisti: 8 Gt 1600 MHz DDR3
 - Näytönohjain: Intel HD Graphics 6000, 1536 Mt
 
-- Ympäristö: DigitalOcean VPS
+- **Ympäristö: DigitalOcean VPS, @nialo**
 - Käyttöjärjestelmä: Debian 12, arm64
 
 ## a) Kirjoita ja aja "Hei maailma" kolmella kielellä. su 6.10.2024
 
 tämä osio klo 18:20 - 19:00
+
+Javan lataus:
+
+    sudo apt-get install default-jre
+    sudo apt-get install default-jdk
 
 Hyödynsin opettajan sivuilla olevia ohjeita.
 
@@ -51,6 +56,8 @@ Testi:
 
 ![19 01 58_HelloWorldPythonilla](https://github.com/user-attachments/assets/67c505b1-25eb-43d8-896d-b6252548d0c1)
 
+[4]
+
 ## b) Laita Linuxiin uusi komento niin, että kaikki käyttäjät voivat ajaa sitä.
 
 Tämä osio klo 19:30 - 20:30
@@ -71,7 +78,7 @@ Lisäsin tiedostoon ajo-oikeudet kaikille käyttäjille `chmod +x hei.sh`, testa
 
 ![19 05 58_komentoPython](https://github.com/user-attachments/assets/ff2ba8f7-de49-46f0-afe0-54d3291dfe61)
 
-Tämän jälkeen kopioin sen pääkäyttäjänä kansioon /usr/local/bin/, unohdin että pitää sudottaa, sekä kompuroin salasanan kanssa vielä.
+Tämän jälkeen kopioin sen pääkäyttäjänä kansioon /usr/local/bin/, unohdin että pitää sudottaa.
 
 ![19 25 57_bashKomennoksi](https://github.com/user-attachments/assets/93486179-535a-463c-8b34-60062ed8809d)
 
@@ -89,6 +96,8 @@ Testi: `immanuel`
 Komento `hei.sh` toimii nyt eri käyttäjillä.
 
 ## c) Ratkaise vanha arvioitava laboratorioharjoitus soveltuvin osin.
+
+### Rinnakkaisarvioinnissa huomattu että tässä tehtävässä tehty vain yksi tehtävä kokonaisuudesta. Päätin että jatkan labraharjoituksia, ja lisään ne raporttiini ennen tehtävän deadlinea.
 
 Tämä osio 20:30 - 21.20
 
@@ -108,9 +117,11 @@ Tämän jälkeen muutin tiedoston oikeuksia `chmod 600 salaista.txt`, joka antaa
 
 ![20 50 39_salaiseksi](https://github.com/user-attachments/assets/110ea56d-1141-4158-ae64-63125b995b0f)
 
-Kokeilin päästä `leonardo`-käyttäjän kansioon, ja järjestelmä ilmoitti että ei ollut siihen oikeuksia. Vvaihdoin käyttäjän `leonardo`-kansion oikeuksia niin, että muilla käyttäjillä on on vain luku oikeus, kun taas `leonardo`-käyttäjällä on täydet oikeudet.
+Kokeilin, `immanuel`-käyttäjänä tarkistella `leonardo`:n kansiota
 
 ![Näyttökuva 2024-10-6 kello 21 08 25](https://github.com/user-attachments/assets/1306e66b-6827-4cc0-aa46-174e31de2302)
+
+Kokeilin päästä `leonardo`-käyttäjän kansioon, ja järjestelmä ilmoitti että ei ollut siihen oikeuksia. Vaihdoin käyttäjän `leonardo`-kansion oikeuksia niin, että muilla käyttäjillä on vain luku oikeus, kun taas `leonardo`-käyttäjällä on täydet oikeudet.
 
 Komento on `chmod 744 /home/leonardo`
 
@@ -118,13 +129,11 @@ Tarkistin tiedoston ja kansion oikeudet komennolla `ls -l`
 
 ![21 03 39_oikeudet](https://github.com/user-attachments/assets/fd4bc445-c2bd-469f-9b2b-696f242a80c3)
 
-Huomasin että, `leonardo`-käyttäjän kansion sisältö oli aika lailla evätty, etenkin tiedostojen kohdalla. Komentoni muuttaa oikeuksia `salaista.txt`-tiedostoon toimivat, koska siinä ei ole samat oikeudet kuin muissa tiedostoissa, mutta oikeudet vastaavat mitä oli komennetty `chmod 600 salaista.txt`
-
 Seuraavaksi kirjauduin käyttäjällä `immanuel` ja kokeilin päästä käsiksi tiedostoon.
 
 ![Näyttökuva 2024-10-6 kello 21 16 56](https://github.com/user-attachments/assets/756c22a8-5969-4944-80bf-2c05166a0822)
 
-Järjestelmä antoi vastaukseksi `permission denied` kun yritin avata `immanuel`-käyttäjällä `leonardo`-käyttäjän tiedostoa. Katsoin vielä `leonardo`-käyttäjän kansiota, johon muillakin oli lukuoikeus, järjestelmä kertoi vielä että tiedostoihin ja kansioihin ei ole asiaa.
+Järjestelmä antoi vastaukseksi `permission denied` kun yritin avata `immanuel`-käyttäjällä `leonardo`-käyttäjän tiedostoa. Katsoin vielä `leonardo`-käyttäjän kansiota, johon muillakin oli lukuoikeus, järjestelmä kertoi vielä että tiedostoihin ja kansioihin ei ole pääsyä.
 
 Aloitin tehtävät klo 18:20 ja olin valmis 21:20
 
