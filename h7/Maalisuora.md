@@ -52,7 +52,9 @@ Viimeiseksi Pythonilla
 
 ![19 01 19_pythonCode](https://github.com/user-attachments/assets/f6724f06-e81f-4a26-9837-9fc4c3a3f030)
 
-Pythonissa kirjoitin koodin niin, että ohjelma kysyy käyttäjältä vaihtoehtoja 1 tai 2. Käyttäjän valinnan jälkeen ohjelma tervehtii joko 1: suomeksi tai 2: englanniksi.
+Pythonissa kirjoitin koodin niin, että ohjelma kysyy käyttäjältä vaihtoehtoja 1 tai 2. Käyttäjän valinnan jälkeen ohjelma tervehtii joko 1: suomeksi tai 2: englanniksi, jos käyttäjä syöttää mitään muuta, ohjelma pyytää valitsemaan kummallakin kielellä joko 1 tai 2, ja lopettaa ohjelman.
+
+_Päivitetty 7.10 klo 16.29 - Python koodin selitystä. Rinnakkaisarvioija huomasi arvioidessaan raporttiani._
 
 Testi:
 
@@ -148,7 +150,7 @@ Järjestelmä antoi vastaukseksi `permission denied` kun yritin avata `immanuel`
   - Pelkkä "hei maailma" ei riitä
 - Komennon tulee toimia kaikilla käyttäjillä työhakemistosta riippumatta
 
-Tässä tehtävässä hyödynsin omaa raporttiani samanlaisesta [tehtävästä](https://github.com/bhg995/lise/edit/main/h7/Maalisuora.md#b-laita-linuxiin-uusi-komento-niin-ett%C3%A4-kaikki-k%C3%A4ytt%C3%A4j%C3%A4t-voivat-ajaa-sit%C3%A4). 
+Tässä tehtävässä hyödynsin omaa raporttiani samanlaisesta [tehtävästä](https://github.com/bhg995/lise/blob/main/h7/Maalisuora.md#b-laita-linuxiin-uusi-komento-niin-ett%C3%A4-kaikki-k%C3%A4ytt%C3%A4j%C3%A4t-voivat-ajaa-sit%C3%A4). _Päivitetty 7.10 klo 16:30. Linkki ohjasi väärään sivuun. Rinnakkaisarvioijan palautteen jälkeen_
 
 Päätin tehdä `howdy`-nimisen Python-komennon, joka käyttää Caesarin salakirjoitusmenetelmää. [8]
 
