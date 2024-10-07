@@ -46,7 +46,7 @@ Testi:
 
 ![18 50 26_helloWorldClla](https://github.com/user-attachments/assets/b6a0aaa6-8366-43f1-96ed-c301184e90e5)
 
-C kieli oli täysin vieras kieli minulle, hieman kompuroin ennenkuin sain tervehdyksen toimimaan. C-kielen tiedoston päätteessä olevassa `.c`-merkissä, oli ylimääräinen c kirjain. Vaihdoin tiedostonnimen `mv`-komennolla.
+C kieli oli täysin vieras kieli minulle, hieman kompuroin ennenkuin sain tervehdyksen toimimaan. Tiedoston nimessä oli häikkää. Vaihdoin tiedostonnimen `mv`-komennolla.
 
 Viimeiseksi Pythonilla
 
