@@ -477,7 +477,9 @@ Voit tarkistaa tiedot PostgreSQL komentoikkunasta:
     sudo -u postgres psql your_db_name
     SELECT * FROM myapp_mymodel;  -- Varmista, että objekti tallentui
 
--------------CHATGPT vastaus loppuu -----------
+-------------CHATGPT vastaus loppuu -----------¢
+
+Kokeilin ChatGPT vastauksia, se näytti jotenkin järkevältä mutta ei toiminut.
 
 <br>
 
@@ -577,6 +579,28 @@ Tein käyttäjän uudelleen, käytin samaa käyttäjänimeä ja salasanaa, joten
 Tällä kertaa Django käynnistyi OK, mutta sain virhekoodin `[02/Oct/2024 16:09:09] "GET / HTTP/1.1" 400 143` kun yritin avata selaimella.
 
 ![Näyttökuva 2024-10-2 kello 19 17 04](https://github.com/user-attachments/assets/b23d556e-acb9-4e9f-91a3-522cf973bcf2)
+
+#### PostgreSql päivitetty
+
+**Päivitys 11.10.2024**
+
+Kokeilin tehtävää uudellee, tällä kertaa Debian 12 käyttöjärjestelmällä, Intel Macbookin kanssa.
+
+Olin myös perehtynyt paremmin PostgreSql kantaan ja sen komentoihin.
+
+Seurasin uudestaan opettajan ohjeita. [terokarvinen.com](https://terokarvinen.com/2016/03/03/install-postgresql-on-ubuntu-new-user-and-database-in-3-commands/)
+ 
+Tein leovice käyttäjästä superuserin, sillä olisi pitänyt pystyä tekemään tietokanta, mutta sain virheen aina kun yritin luoda taulua.
+
+![Näyttökuva 2024-10-11 kello 10 32 41](https://github.com/user-attachments/assets/48dc8bb4-6b0f-441d-810a-9842818f3b4e)
+
+Lopulta kirjauduin suoraan Superuser:na, ja pääsin heti ja helposti muokkaamaan tietokantaa.
+
+![Näyttökuva 2024-10-11 kello 10 20 34](https://github.com/user-attachments/assets/50c31650-ff31-43b7-9a35-86eec1b94cf1)
+
+Tietokannassa näkyi juuri lisätyt aiheet.
+
+![Näyttökuva 2024-10-11 kello 10 30 12](https://github.com/user-attachments/assets/492c0790-c6d4-441d-b00b-2d65ee7361b2)
 
 
 
