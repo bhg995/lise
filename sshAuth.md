@@ -1,6 +1,6 @@
 # SSH Authentication Method, DigitalOcean
 
-Debian, MacOs Monterey
+Debian, MacOs Monterey 12
 
 ### Generate SSH-key pair
 
