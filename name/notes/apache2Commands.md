@@ -1,4 +1,6 @@
+echo "master: 192.168.56.4" | sudo tee /etc/salt/minion > /dev/null
 
+-Remember about the (-a/--append) flag! Just tee works like > and will overwrite your file. tee -a works like >> and will write at the end of the file.
 
 # Apache2 Bash Commands
 F
